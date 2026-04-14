@@ -165,6 +165,8 @@ class FakeSheet {
   constructor(name, values, id, spreadsheet) {
     this.breakApartCalls = 0;
     this.clearCalls = 0;
+    this.frozenColumns = 0;
+    this.frozenRows = 0;
     this.groupDepthCalls = 0;
     this.hiddenColumns = [];
     this.id = id;
@@ -248,10 +250,12 @@ class FakeSheet {
   }
 
   setFrozenColumns() {
+    this.frozenColumns = arguments[0];
     return this;
   }
 
   setFrozenRows() {
+    this.frozenRows = arguments[0];
     return this;
   }
 
@@ -450,15 +454,19 @@ describe('WorkbookStyle', () => {
 
     applyWorkbookPresentation_(spreadsheet, { rebuildStartHere: true });
 
+    const outboundSheet = spreadsheet.getSheetByName('Outbound');
+    const startSheet = spreadsheet.getSheetByName('Start Here');
+
     expect(spreadsheet.getSheetByName('Compose').clearCalls).toBe(0);
     expect(spreadsheet.getSheetByName('Config').clearCalls).toBe(0);
-    expect(spreadsheet.getSheetByName('Outbound').clearCalls).toBe(0);
+    expect(outboundSheet.clearCalls).toBe(0);
     expect(spreadsheet.getSheetByName('Analytics').clearCalls).toBe(0);
-    expect(
-      spreadsheet.getSheetByName('Outbound').getRange(2, 1, 1, schema.getOutboundHeaders().length).getValues()
-    ).toEqual(outboundBefore);
-    expect(spreadsheet.getSheetByName('Outbound').hiddenColumns.length).toBeGreaterThan(0);
+    expect(outboundSheet.getRange(2, 1, 1, schema.getOutboundHeaders().length).getValues()).toEqual(outboundBefore);
+    expect(outboundSheet.frozenColumns).toBe(4);
+    expect(outboundSheet.hiddenColumns).toEqual(expect.arrayContaining([expect.objectContaining({ start: 5 })]));
     expect(spreadsheet.getSheets()[0].getName()).toBe('Start Here');
+    expect(startSheet.tabColor).toBeTruthy();
+    expect(startSheet.tabColor).not.toBe(outboundSheet.tabColor);
   });
 
   test('refreshStartHereSheet_ upgrades an imported intro sheet into Start Here', () => {
@@ -470,5 +478,18 @@ describe('WorkbookStyle', () => {
     expect(spreadsheet.getSheetByName('Start Here')).toBe(startSheet);
     expect(startSheet.clearCalls).toBe(1);
     expect(startSheet.values[1][1]).toBe('Gmail Studio');
+  });
+
+  test('refreshStartHereSheet_ writes the command-center content blocks and live formulas', () => {
+    const spreadsheet = buildWorkbook(false);
+
+    const startSheet = refreshStartHereSheet_(spreadsheet);
+
+    expect(startSheet.values[5][1]).toContain('1 / Configure');
+    expect(startSheet.values[9][1]).toMatch(/^=HYPERLINK/);
+    expect(startSheet.values[17][1]).toBe('Live Queue');
+    expect(startSheet.values[18][1]).toBe('Remaining quota');
+    expect(startSheet.values.flat().some((value) => String(value).includes('GET_REMAINING_QUOTA()'))).toBe(true);
+    expect(startSheet.values[24][1]).toContain('Use the Email Tools menu');
   });
 });

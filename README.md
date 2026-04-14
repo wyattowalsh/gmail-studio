@@ -15,7 +15,7 @@ See also: [`ui/README.md`](./ui/README.md)
 - **Apps Script = backend**
   - validates payloads, renders templates, creates drafts or sends email, updates queue rows, and serves tracking endpoints.
 - **React sidebar = operator UI**
-  - two tabs: **Compose** and **Queue**.
+  - three tabs: **Compose**, **Queue**, and **Analytics**.
   - uses `google.script.run` in Apps Script and mock responses in local preview mode.
 
 ## Spreadsheet contract
@@ -45,7 +45,10 @@ Defined in `Schema.js` and written by `Setup.js`:
 - `setupSheets()` is the destructive initializer. It rebuilds the core workbook tabs and then applies the shared presentation layer.
 - `restyleWorkbook()` is the safe makeover action. It preserves existing data, validations, formulas, and queue state while refreshing formatting, hidden/grouped columns, tab order, and the landing sheet.
 - `refreshStartHereSheet()` only rebuilds the `Start Here` tab.
+- `refreshOperatorSafeguards()` reapplies the workbook semantic anchors plus warning-only protections for the non-editable system regions.
+- `refreshQueueViews()` recreates the optional `Outbound` slicers for `status`, `template_name`, and `delivery_mode`.
 - `Outbound` now uses progressive disclosure: the high-signal sending columns stay visible by default, while advanced/system columns are hidden and grouped so the queue is easier to scan.
+- `Start Here` is intentionally a command center, not an execution sheet. Menu actions remain the source of truth for sends, drafts, and scheduler controls.
 
 ## Send vs draft workflows
 
@@ -79,21 +82,25 @@ The sidebar is a bundled React app compiled to a single HTML file.
   - preview current compose HTML
   - create Gmail draft
   - send compose row
-  - attach Drive file IDs into the active sheet cell via Google Picker
+  - show Drive Picker readiness and attach Drive file IDs into the active sheet cell when Picker is available
 - **Queue tab**
   - reads `getQuotaForecast()`
   - runs send/draft queue actions
   - uses optimistic UI for queue metrics and action feed
-    The sidebar uses mock data when `google.script.run` is unavailable, so `pnpm --dir ui dev` and `pnpm --dir ui preview` work outside Apps Script.
+- **Analytics tab**
+  - reads summary and seven-day trend data from the raw `Analytics` sheet
+  - keeps the operator UI aligned with the workbook’s warm-premium control-plane design
+
+The sidebar uses mock data when `google.script.run` is unavailable, so `pnpm --dir ui dev` and `pnpm --dir ui preview` work outside Apps Script.
 
 Tracking is optional and disabled by default via `Config -> tracking_enabled = FALSE`, so normal sending and drafting do not require a web app deployment.
 
 ## Template lineup
 
-- `TemplatePersonalNote` — default personal one-to-one note
-- `TemplateBrutalist` — expressive personal note with more edge
-- `TemplateMinimal` — quieter, highly readable personal option
-- `TemplateClean` — polished secondary option
+- `TemplatePersonalNote` — default warm personal note
+- `TemplateBrutalist` — sharper editorial personal note
+- `TemplateMinimal` — quiet, low-friction personal option
+- `TemplateClean` — polished personal option with more finish
 - `EmailTemplate` — legacy compatibility fallback
 - `TemplateNewsletter` — broadcast-only updates and announcements
 
@@ -135,27 +142,25 @@ The active signature data comes from `Config` and can be overridden per payload 
 Use this in `Compose` for a first test:
 
 - `recipient`: `yourfriend@example.com`
-- `subject`: `quick note from me`
-- `headline`: `made this for the homies`
+- `subject`: `Quick note from Gmail Studio`
+- `headline`: `A cleaner way to send from Sheets`
 - `body_text`:
 
 ```text
-yo,
+Hi,
 
-i finally put together a cleaner way to send nice-looking emails straight from sheets.
+I put together a calmer way to send polished emails directly from Sheets.
 
-this one is just a test, but the vibe is:
-- personal
-- simple
-- actually readable
-- not some ugly default gmail block
+This first draft is just a check, but the workflow is designed to stay readable,
+operator-friendly, and easy to review before anything goes live.
 
-if this lands cleanly, mission accomplished.
+If the layout feels right, we can send from here with confidence.
 
-- me
+Best,
+Sam
 ```
 
-- `cta_text`: `Open it`
+- `cta_text`: `Review message`
 - `cta_url`: `https://example.com`
 - `template_name`: `TemplatePersonalNote`
 - `signature_mode`: `compact`
@@ -172,7 +177,9 @@ Useful workbook actions:
 
 1. `Email Tools -> Restyle Workbook` to refresh the visual system without wiping data
 2. `Email Tools -> Refresh Start Here` to rebuild the command-center tab only
-3. `Email Tools -> Initialize / Reset Sheets (Destructive)` only when you intentionally want a full reset
+3. `Email Tools -> Refresh Operator Safeguards` to restore workbook metadata and warning-only protections
+4. `Email Tools -> Refresh Queue Views` to recreate the optional queue slicers
+5. `Email Tools -> Rebuild Workbook (Destructive)` only when you intentionally want a full reset
 
 ## Commands
 
@@ -230,10 +237,12 @@ So deployment is automatic only for successful pushes to `main`, and it pushes t
 
 - `Schema.js` — canonical sheet names, template registry, headers, delivery modes, statuses
 - `Setup.js` — creates and formats the spreadsheet contract
+- `WorkbookSemantics.js` — semantic anchors, warning-only protections, and optional `Outbound` queue views
 - `WorkbookStyle.js` — shared spreadsheet presentation helpers for setup, restyle, and `Start Here`
 - `SheetData.js` — reads/writes Compose, Config, and Outbound data
 - `Validation.js` — payload normalization, markdown conversion, A/B subject/headline selection
 - `EmailSender.js` — send/draft execution, batch processing, quota handling
+- `DriveIntegration.js` — Drive Picker readiness contract plus attachment-id insertion
 - `SignatureCompact.html` / `SignatureFull.html` — compact and full signature partials
 - `Automation.js` — auto-queues rows when a `studio_status` column is edited to `READY`
 - `Sequences.js` — appends the next scheduled step after a successful send
