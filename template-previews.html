@@ -1,0 +1,3751 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail Studio Template Previews</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, system-ui, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: 32px;
+        background:
+          radial-gradient(circle at top left, rgba(200, 164, 126, 0.18), transparent 32%),
+          radial-gradient(circle at top right, rgba(125, 145, 122, 0.16), transparent 28%),
+          linear-gradient(180deg, #f6f1e8 0%, #f1ece3 100%);
+        color: #18191b;
+      }
+
+      .shell { max-width: 1600px; margin: 0 auto; }
+
+      .hero {
+        margin-bottom: 24px;
+        padding: 28px 28px 26px 28px;
+        border: 1px solid #d8ccbc;
+        background: linear-gradient(135deg, #fffdf8 0%, #fbf4ea 100%);
+        box-shadow: 0 20px 48px rgba(46, 35, 22, 0.08);
+      }
+
+      .hero h1 {
+        margin: 0 0 8px;
+        font-size: 42px;
+        line-height: 0.96;
+        letter-spacing: -0.08em;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 880px;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #4d4b46;
+      }
+
+      .hero code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.92em;
+      }
+
+      .scenario { margin-bottom: 28px; }
+
+      .scenario-header {
+        margin-bottom: 16px;
+        padding: 18px 20px;
+        border: 1px solid #d8ccbc;
+        background: #fffdf9;
+      }
+
+      .scenario-header h2 {
+        margin: 4px 0 6px;
+        font-size: 28px;
+        line-height: 1;
+        letter-spacing: -0.06em;
+      }
+
+      .scenario-header p {
+        margin: 0;
+        max-width: 760px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #5b5952;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        border: 1px solid #d8ccbc;
+        background: #ffffff;
+        box-shadow: 0 18px 32px rgba(29, 20, 11, 0.07);
+        overflow: hidden;
+        border-radius: 18px;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px 18px 16px 18px;
+        border-bottom: 1px solid #e4dbcf;
+        background: linear-gradient(180deg, #fffefb 0%, #fcf7f0 100%);
+      }
+
+      .card-header h3 {
+        margin: 4px 0 6px;
+        font-size: 22px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      .card-header p {
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #5b5952;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #8e6d4f;
+      }
+
+      .eyebrow-secondary { color: #587168; }
+      .eyebrow-broadcast { color: #a66a31; }
+      .eyebrow-legacy { color: #7b756d; }
+
+      .meta {
+        white-space: nowrap;
+        align-self: flex-start;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11px;
+        color: #7d756b;
+      }
+
+      .iframe-wrap {
+        padding: 14px;
+        background: #f4eee5;
+      }
+
+      iframe {
+        width: 100%;
+        height: 720px;
+        border: 1px solid #d8ccbc;
+        background: #ffffff;
+      }
+
+      @media (max-width: 640px) {
+        body { padding: 16px; }
+        .hero { padding: 18px; }
+        .hero h1 { font-size: 30px; }
+        .scenario-header h2 { font-size: 22px; }
+        iframe { height: 640px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <h1>Warm Premium Template Previews</h1>
+        <p>
+          Registry-driven sample renderings of every Gmail Studio template across multiple real-world scenarios.
+          Regenerate with <code>pnpm preview:templates</code>. Validate freshness with
+          <code>pnpm preview:templates:check</code>.
+        </p>
+      </section>
+
+      
+        <section class="scenario">
+          <header class="scenario-header">
+            <div>
+              <div class="eyebrow">Scenario</div>
+              <h2>Personal Note</h2>
+              <p>Polished one-to-one message with greeting, CTA, compact signature, and footer details.</p>
+            </div>
+          </header>
+          <div class="grid">
+            
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Personal Note</h3>
+                  <p>Warm one-to-one note with the gentlest layout and the clearest reading rhythm.</p>
+                </div>
+                <div class="meta">TemplatePersonalNote</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplatePersonalNote personal-note" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f7efe4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    polished one-to-one note&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f7efe4;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffaf3; border: 1px solid #e1d4c3;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 6px; line-height: 6px; font-size: 6px; background: linear-gradient(90deg, #9e6b4f 0%, #c59d77 50%, #8a9b7d 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 28px 30px 24px 30px; font-family: Georgia, 'Times New Roman', serif; color: #2a2119;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin: 0 0 18px 0;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 6px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #7a634f; border: 1px solid #e1d4c3; background-color: #fbf5ee;&quot;&gt;
+                    Personal note
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+
+              
+              &lt;div style=&quot;margin: 0 0 10px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 25px; color: #5f564d;&quot;&gt;
+                Hi Alex,
+              &lt;/div&gt;
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 14px 0; font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.04em; color: #201914;&quot;&gt;
+                a cleaner way to send thoughtful email
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; font-size: 18px; line-height: 31px; color: #3f372f;&quot;&gt;
+                &lt;p&gt;I finally put together a cleaner way to send thoughtful emails straight from Sheets.&lt;/p&gt;&lt;p&gt;This version keeps the message personal, readable, and low-friction.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;simple&lt;/li&gt;&lt;li&gt;calm&lt;/li&gt;&lt;li&gt;easy to scan&lt;/li&gt;&lt;li&gt;pleasant to send&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If it feels easy to read, the template is doing its job.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 24px;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;border: 1px solid #b98f72; background-color: #f7ebe1;&quot;&gt;
+                    &lt;a href=&quot;https://example.com&quot; style=&quot;display: inline-block; padding: 12px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 17px; font-weight: 700; color: #6f4c39; text-decoration: none; letter-spacing: 0.04em;&quot;&gt;
+                      Open the link
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+
+              
+              &lt;div style=&quot;height: 22px; line-height: 22px; font-size: 22px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+              
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 30px 22px 30px; font-family: Arial, Helvetica, sans-serif;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #ece0d2;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 14px; font-size: 12px; line-height: 18px; color: #7c6f64;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 4px 0;&quot;&gt;Sent with care from a clean, repeatable workflow.&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #66584d; font-weight: 600;&quot;&gt;Northline Studio&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;Los Angeles, CA&lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Brutalist</h3>
+                  <p>High-contrast personal option with more editorial edge and deliberate spacing.</p>
+                </div>
+                <div class="meta">TemplateBrutalist</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateBrutalist personal-note" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f5eee3; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    polished one-to-one note&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f5eee3;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 28px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffdf8; border: 2px solid #171717;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 8px; line-height: 8px; font-size: 8px; background: linear-gradient(90deg, #171717 0%, #171717 68%, #ad7b52 68%, #ad7b52 84%, #748d67 84%, #748d67 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 30px 30px 28px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #171717;&quot;&gt;
+              &lt;div style=&quot;margin: 0 0 18px 0; font-size: 10px; line-height: 14px; font-weight: 800; letter-spacing: 1.9px; text-transform: uppercase; color: #9a6d47;&quot;&gt;
+                Crisp note
+              &lt;/div&gt;
+
+              
+              &lt;div style=&quot;margin: 0 0 14px 0; font-size: 16px; line-height: 24px; color: #3f3a36;&quot;&gt;
+                Hi Alex,
+              &lt;/div&gt;
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 18px 0; font-size: 32px; line-height: 1.06; font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; color: #111111;&quot;&gt;
+                a cleaner way to send thoughtful email
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; padding-left: 18px; border-left: 3px solid #171717; font-size: 16px; line-height: 27px; color: #242424;&quot;&gt;
+                &lt;p&gt;I finally put together a cleaner way to send thoughtful emails straight from Sheets.&lt;/p&gt;&lt;p&gt;This version keeps the message personal, readable, and low-friction.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;simple&lt;/li&gt;&lt;li&gt;calm&lt;/li&gt;&lt;li&gt;easy to scan&lt;/li&gt;&lt;li&gt;pleasant to send&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If it feels easy to read, the template is doing its job.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 28px;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;background-color: #171717; border: 2px solid #171717; text-align: center;&quot;&gt;
+                    &lt;a href=&quot;https://example.com&quot; style=&quot;display: inline-block; padding: 12px 18px; font-size: 13px; line-height: 16px; font-weight: 800; letter-spacing: 0.9px; text-transform: uppercase; color: #ffffff; text-decoration: none;&quot;&gt;
+                      Open the link
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+
+              
+              &lt;div style=&quot;height: 26px; line-height: 26px; font-size: 26px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+              
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 30px 24px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #cfc6b7;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 16px; font-size: 12px; line-height: 19px; color: #5f5b57;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0;&quot;&gt;Sent with care from a clean, repeatable workflow.&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #44403c; font-weight: 700;&quot;&gt;Northline Studio&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;Los Angeles, CA&lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Minimal</h3>
+                  <p>Quiet, stripped-back personal format that keeps the copy at center stage.</p>
+                </div>
+                <div class="meta">TemplateMinimal</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateMinimal personal-note" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #f4f0e8; color: #1f2933; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    polished one-to-one note&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4f0e8;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 38px 18px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; margin: 0 auto; background-color: #fffdf9; border: 1px solid #e1d8cb;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 5px; line-height: 5px; font-size: 5px; background: linear-gradient(90deg, #4d6b5d 0%, #b78b63 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 38px 40px 34px 40px; color: #1f2933;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6f7a83; white-space: nowrap;&quot;&gt;
+                          Minimal note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3d9ca;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 12px 0; font-size: 15px; line-height: 24px; color: #5a6874;&quot;&gt;
+                    Hi Alex,
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 31px; line-height: 1.16; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      a cleaner way to send thoughtful email
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 30px; color: #33404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;I finally put together a cleaner way to send thoughtful emails straight from Sheets.&lt;/p&gt;&lt;p&gt;This version keeps the message personal, readable, and low-friction.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;simple&lt;/li&gt;&lt;li&gt;calm&lt;/li&gt;&lt;li&gt;easy to scan&lt;/li&gt;&lt;li&gt;pleasant to send&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If it feels easy to read, the template is doing its job.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 30px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 0 0 10px 0; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6f7a83;&quot;&gt;
+                          Next step
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;
+                          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                            &lt;tr&gt;
+                              &lt;td style=&quot;border: 1px solid #d1dbe4; background-color: #f8faf8; padding: 11px 15px;&quot;&gt;
+                                &lt;a href=&quot;https://example.com&quot; style=&quot;display: inline-block; font-size: 14px; line-height: 18px; font-weight: 700; color: #23313d; text-decoration: none;&quot;&gt;
+                                  &lt;span style=&quot;color: #6f7a83; font-weight: 500;&quot;&gt;Open&lt;/span&gt;
+                                  &lt;span style=&quot;color: #c8cfd7;&quot;&gt;&amp;nbsp;/&amp;nbsp;&lt;/span&gt;
+                                  Open the link &amp;rarr;
+                                &lt;/a&gt;
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/table&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 30px 0 0 0;&quot;&gt;
+                    
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e6ddd0;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 16px; font-size: 12px; line-height: 20px; color: #6b7681;&quot;&gt;
+                          
+                          &lt;div style=&quot;margin: 0 0 6px 0;&quot;&gt;
+                            Sent with care from a clean, repeatable workflow.
+                          &lt;/div&gt;
+                          
+                          
+                          &lt;div style=&quot;margin: 0 0 2px 0; font-weight: 600; color: #4a5966;&quot;&gt;
+                            Northline Studio
+                          &lt;/div&gt;
+                          
+                          
+                          &lt;div style=&quot;margin: 0;&quot;&gt;
+                            Los Angeles, CA
+                          &lt;/div&gt;
+                          
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-secondary">Secondary</div>
+                  <h3>Clean</h3>
+                  <p>Sharper polished frame for personal sends that need a little more finish.</p>
+                </div>
+                <div class="meta">TemplateClean</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateClean personal-note" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f3efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    polished one-to-one note&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f3efe7;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 34px 14px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf8; border: 1px solid #ddd4c8;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #7f8d7d;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 34px 32px 30px 32px; font-family: Arial, Helvetica, sans-serif; color: #17212b;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Clean note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3dbcf;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 12px 0; font-size: 15px; line-height: 23px; color: #51606d;&quot;&gt;
+                    Hi Alex,
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 30px; line-height: 1.18; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      a cleaner way to send thoughtful email
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 29px; color: #30404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;I finally put together a cleaner way to send thoughtful emails straight from Sheets.&lt;/p&gt;&lt;p&gt;This version keeps the message personal, readable, and low-friction.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;simple&lt;/li&gt;&lt;li&gt;calm&lt;/li&gt;&lt;li&gt;easy to scan&lt;/li&gt;&lt;li&gt;pleasant to send&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If it feels easy to read, the template is doing its job.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;border: 1px solid #d6cec0; background-color: #eef3ed;&quot;&gt;
+                          &lt;a href=&quot;https://example.com&quot; style=&quot;display: inline-block; padding: 12px 18px; font-size: 14px; line-height: 18px; font-weight: 700; color: #31483e; text-decoration: none;&quot;&gt;
+                            Open the link
+                          &lt;/a&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 28px; line-height: 28px; font-size: 28px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;
+                    
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 32px 28px 32px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e7dfd2;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 14px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 19px; color: #6a757f;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 6px 0;&quot;&gt;
+                      Sent with care from a clean, repeatable workflow.
+                    &lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #4a5763; font-weight: 700; letter-spacing: 0.2px;&quot;&gt;
+                      Northline Studio
+                    &lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;
+                      Los Angeles, CA
+                    &lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-broadcast">Broadcast</div>
+                  <h3>Newsletter</h3>
+                  <p>Broadcast layout for launches, updates, and announcements with a calmer finish.</p>
+                </div>
+                <div class="meta">TemplateNewsletter</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateNewsletter personal-note" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #eef1ea; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    polished one-to-one note&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #eef1ea;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 42px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 680px; background-color: #fffdf9; border: 1px solid #d5ddd0; box-shadow: 0 16px 36px rgba(45, 58, 45, 0.08);&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0; background: linear-gradient(90deg, #24382f 0%, #40584b 74%, #c18b5c 74%, #c18b5c 100%);&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 22px 30px 18px 30px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; text-align: left;&quot;&gt;
+                    &lt;div style=&quot;font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; color: #f2c48d;&quot;&gt;
+                      Broadcast dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 8px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;&quot;&gt;
+                      Studio dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 10px; max-width: 530px; font-size: 13px; line-height: 20px; color: #d6e0d8;&quot;&gt;
+                      For launches, release notes, product updates, and the occasional more polished broadcast.
+                    &lt;/div&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #cf9466;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 32px 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Update bulletin
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #dde3d6;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0; font-family: Arial, Helvetica, sans-serif; text-align: left;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 34px; line-height: 40px; font-weight: 800; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      a cleaner way to send thoughtful email
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 29px; color: #42505b; text-align: left; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;I finally put together a cleaner way to send thoughtful emails straight from Sheets.&lt;/p&gt;&lt;p&gt;This version keeps the message personal, readable, and low-friction.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;simple&lt;/li&gt;&lt;li&gt;calm&lt;/li&gt;&lt;li&gt;easy to scan&lt;/li&gt;&lt;li&gt;pleasant to send&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If it feels easy to read, the template is doing its job.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border: 1px solid #dce3d7; background-color: #f7faf5;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 14px 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #6d776f; text-align: left;&quot;&gt;
+                          Primary link
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 0 18px 18px 18px; text-align: left;&quot;&gt;
+                          &lt;a href=&quot;https://example.com&quot; style=&quot;display: inline-block; background-color: #24382f; color: #ffffff; padding: 14px 22px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px; font-weight: 800; text-decoration: none; letter-spacing: 0.6px; border: 1px solid #24382f;&quot;&gt;
+                            Open the link
+                          &lt;/a&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 24px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e1e7db;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 14px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8f9a8f; text-align: left;&quot;&gt;
+                          Reply contact
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 10px; text-align: left; color: #56626a;&quot;&gt;
+                          
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border: 1px solid #d9e1d4; background-color: #f7faf5;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 14px 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #6d776f; text-align: left;&quot;&gt;
+                    Company details
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; text-align: left;&quot;&gt;
+                    Sent with care from a clean, repeatable workflow.
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 4px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #31413a; text-align: left; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;&quot;&gt;
+                    Northline Studio
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 18px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; text-align: left;&quot;&gt;
+                    Los Angeles, CA
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-legacy">Legacy</div>
+                  <h3>Classic</h3>
+                  <p>Legacy compatibility fallback for older rows and safer rendering.</p>
+                </div>
+                <div class="meta">EmailTemplate</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="EmailTemplate personal-note" srcdoc="&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;base target=&quot;_top&quot;&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin: 0; padding: 0; background-color: #f4efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+    &lt;div style=&quot;display: none; max-height: 0; max-width: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent; font-size: 1px; line-height: 1px;&quot;&gt;
+      polished one-to-one note
+    &lt;/div&gt;
+
+    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4efe7;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px;&quot;&gt;
+          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf9; border: 1px solid #ddd4c8;&quot;&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #607366;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 34px 30px 28px 30px; font-family: Arial, Helvetica, sans-serif; color: #1f2933;&quot;&gt;
+                
+                &lt;div style=&quot;margin: 0 0 12px 0; font-size: 14px; line-height: 22px; color: #5f6b75;&quot;&gt;
+                  Hi Alex,
+                &lt;/div&gt;
+                
+
+                
+                &lt;h1 style=&quot;margin: 0 0 16px 0; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.03em; color: #17212b;&quot;&gt;
+                  a cleaner way to send thoughtful email
+                &lt;/h1&gt;
+                
+
+                
+                &lt;div style=&quot;margin: 0; font-size: 16px; line-height: 28px; color: #35424f; word-break: break-word;&quot;&gt;
+                  &lt;p&gt;I finally put together a cleaner way to send thoughtful emails straight from Sheets.&lt;/p&gt;&lt;p&gt;This version keeps the message personal, readable, and low-friction.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;simple&lt;/li&gt;&lt;li&gt;calm&lt;/li&gt;&lt;li&gt;easy to scan&lt;/li&gt;&lt;li&gt;pleasant to send&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;If it feels easy to read, the template is doing its job.&lt;/p&gt;
+                &lt;/div&gt;
+                
+
+                
+                &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 26px;&quot;&gt;
+                  &lt;tr&gt;
+                    &lt;td style=&quot;background-color: #445c50; text-align: center;&quot;&gt;
+                      &lt;a href=&quot;https://example.com&quot; style=&quot;display: inline-block; padding: 12px 20px; font-size: 14px; line-height: 20px; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: 0.2px;&quot;&gt;
+                        Open the link
+                      &lt;/a&gt;
+                    &lt;/td&gt;
+                  &lt;/tr&gt;
+                &lt;/table&gt;
+                
+
+                
+                &lt;div style=&quot;height: 24px; line-height: 24px; font-size: 24px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+
+            
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 18px 30px 22px 30px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; border-top: 1px solid #e7dfd2; background-color: #faf7f1;&quot;&gt;
+                
+                &lt;div style=&quot;margin: 0 0 8px 0; color: #6d776f;&quot;&gt;
+                  Sent with care from a clean, repeatable workflow.
+                &lt;/div&gt;
+                
+                
+                &lt;div style=&quot;margin: 0 0 4px 0; color: #44504f; font-weight: 700; letter-spacing: 0.2px;&quot;&gt;
+                  Northline Studio
+                &lt;/div&gt;
+                
+                
+                &lt;div style=&quot;margin: 0; color: #6d776f;&quot;&gt;
+                  Los Angeles, CA
+                &lt;/div&gt;
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+          </div>
+        </section>
+      
+
+        <section class="scenario">
+          <header class="scenario-header">
+            <div>
+              <div class="eyebrow">Scenario</div>
+              <h2>Quiet No-CTA</h2>
+              <p>A softer note without CTA or footer copy. Good for checking plain one-to-one readability.</p>
+            </div>
+          </header>
+          <div class="grid">
+            
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Personal Note</h3>
+                  <p>Warm one-to-one note with the gentlest layout and the clearest reading rhythm.</p>
+                </div>
+                <div class="meta">TemplatePersonalNote</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplatePersonalNote quiet-no-cta" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f7efe4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    plain note without a CTA&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f7efe4;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffaf3; border: 1px solid #e1d4c3;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 6px; line-height: 6px; font-size: 6px; background: linear-gradient(90deg, #9e6b4f 0%, #c59d77 50%, #8a9b7d 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 28px 30px 24px 30px; font-family: Georgia, 'Times New Roman', serif; color: #2a2119;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin: 0 0 18px 0;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 6px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #7a634f; border: 1px solid #e1d4c3; background-color: #fbf5ee;&quot;&gt;
+                    Personal note
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+
+              
+              &lt;div style=&quot;margin: 0 0 10px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 25px; color: #5f564d;&quot;&gt;
+                Hi Jordan,
+              &lt;/div&gt;
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 14px 0; font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.04em; color: #201914;&quot;&gt;
+                passing this along
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; font-size: 18px; line-height: 31px; color: #3f372f;&quot;&gt;
+                &lt;p&gt;Wanted to send this over while it was still fresh.&lt;/p&gt;&lt;p&gt;No ask, no funnel, just a clear note that can stand on its own.&lt;/p&gt;&lt;p&gt;If you have thoughts, reply whenever is convenient.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+
+              
+              &lt;div style=&quot;height: 22px; line-height: 22px; font-size: 22px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+              
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Brutalist</h3>
+                  <p>High-contrast personal option with more editorial edge and deliberate spacing.</p>
+                </div>
+                <div class="meta">TemplateBrutalist</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateBrutalist quiet-no-cta" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f5eee3; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    plain note without a CTA&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f5eee3;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 28px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffdf8; border: 2px solid #171717;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 8px; line-height: 8px; font-size: 8px; background: linear-gradient(90deg, #171717 0%, #171717 68%, #ad7b52 68%, #ad7b52 84%, #748d67 84%, #748d67 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 30px 30px 28px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #171717;&quot;&gt;
+              &lt;div style=&quot;margin: 0 0 18px 0; font-size: 10px; line-height: 14px; font-weight: 800; letter-spacing: 1.9px; text-transform: uppercase; color: #9a6d47;&quot;&gt;
+                Crisp note
+              &lt;/div&gt;
+
+              
+              &lt;div style=&quot;margin: 0 0 14px 0; font-size: 16px; line-height: 24px; color: #3f3a36;&quot;&gt;
+                Hi Jordan,
+              &lt;/div&gt;
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 18px 0; font-size: 32px; line-height: 1.06; font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; color: #111111;&quot;&gt;
+                passing this along
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; padding-left: 18px; border-left: 3px solid #171717; font-size: 16px; line-height: 27px; color: #242424;&quot;&gt;
+                &lt;p&gt;Wanted to send this over while it was still fresh.&lt;/p&gt;&lt;p&gt;No ask, no funnel, just a clear note that can stand on its own.&lt;/p&gt;&lt;p&gt;If you have thoughts, reply whenever is convenient.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+
+              
+              &lt;div style=&quot;height: 26px; line-height: 26px; font-size: 26px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+              
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Minimal</h3>
+                  <p>Quiet, stripped-back personal format that keeps the copy at center stage.</p>
+                </div>
+                <div class="meta">TemplateMinimal</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateMinimal quiet-no-cta" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #f4f0e8; color: #1f2933; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    plain note without a CTA&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4f0e8;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 38px 18px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; margin: 0 auto; background-color: #fffdf9; border: 1px solid #e1d8cb;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 5px; line-height: 5px; font-size: 5px; background: linear-gradient(90deg, #4d6b5d 0%, #b78b63 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 38px 40px 34px 40px; color: #1f2933;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6f7a83; white-space: nowrap;&quot;&gt;
+                          Minimal note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3d9ca;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 12px 0; font-size: 15px; line-height: 24px; color: #5a6874;&quot;&gt;
+                    Hi Jordan,
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 31px; line-height: 1.16; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      passing this along
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 30px; color: #33404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;Wanted to send this over while it was still fresh.&lt;/p&gt;&lt;p&gt;No ask, no funnel, just a clear note that can stand on its own.&lt;/p&gt;&lt;p&gt;If you have thoughts, reply whenever is convenient.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 30px 0 0 0;&quot;&gt;
+                    
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-secondary">Secondary</div>
+                  <h3>Clean</h3>
+                  <p>Sharper polished frame for personal sends that need a little more finish.</p>
+                </div>
+                <div class="meta">TemplateClean</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateClean quiet-no-cta" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f3efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    plain note without a CTA&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f3efe7;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 34px 14px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf8; border: 1px solid #ddd4c8;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #7f8d7d;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 34px 32px 30px 32px; font-family: Arial, Helvetica, sans-serif; color: #17212b;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Clean note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3dbcf;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 12px 0; font-size: 15px; line-height: 23px; color: #51606d;&quot;&gt;
+                    Hi Jordan,
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 30px; line-height: 1.18; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      passing this along
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 29px; color: #30404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;Wanted to send this over while it was still fresh.&lt;/p&gt;&lt;p&gt;No ask, no funnel, just a clear note that can stand on its own.&lt;/p&gt;&lt;p&gt;If you have thoughts, reply whenever is convenient.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 28px; line-height: 28px; font-size: 28px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;
+                    
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-broadcast">Broadcast</div>
+                  <h3>Newsletter</h3>
+                  <p>Broadcast layout for launches, updates, and announcements with a calmer finish.</p>
+                </div>
+                <div class="meta">TemplateNewsletter</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateNewsletter quiet-no-cta" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #eef1ea; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    plain note without a CTA&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #eef1ea;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 42px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 680px; background-color: #fffdf9; border: 1px solid #d5ddd0; box-shadow: 0 16px 36px rgba(45, 58, 45, 0.08);&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0; background: linear-gradient(90deg, #24382f 0%, #40584b 74%, #c18b5c 74%, #c18b5c 100%);&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 22px 30px 18px 30px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; text-align: left;&quot;&gt;
+                    &lt;div style=&quot;font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; color: #f2c48d;&quot;&gt;
+                      Broadcast dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 8px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;&quot;&gt;
+                      Studio dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 10px; max-width: 530px; font-size: 13px; line-height: 20px; color: #d6e0d8;&quot;&gt;
+                      For launches, release notes, product updates, and the occasional more polished broadcast.
+                    &lt;/div&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #cf9466;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 32px 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Update bulletin
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #dde3d6;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0; font-family: Arial, Helvetica, sans-serif; text-align: left;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 34px; line-height: 40px; font-weight: 800; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      passing this along
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 29px; color: #42505b; text-align: left; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;Wanted to send this over while it was still fresh.&lt;/p&gt;&lt;p&gt;No ask, no funnel, just a clear note that can stand on its own.&lt;/p&gt;&lt;p&gt;If you have thoughts, reply whenever is convenient.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 24px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e1e7db;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 14px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8f9a8f; text-align: left;&quot;&gt;
+                          Reply contact
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 10px; text-align: left; color: #56626a;&quot;&gt;
+                          
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-legacy">Legacy</div>
+                  <h3>Classic</h3>
+                  <p>Legacy compatibility fallback for older rows and safer rendering.</p>
+                </div>
+                <div class="meta">EmailTemplate</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="EmailTemplate quiet-no-cta" srcdoc="&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;base target=&quot;_top&quot;&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin: 0; padding: 0; background-color: #f4efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+    &lt;div style=&quot;display: none; max-height: 0; max-width: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent; font-size: 1px; line-height: 1px;&quot;&gt;
+      plain note without a CTA
+    &lt;/div&gt;
+
+    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4efe7;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px;&quot;&gt;
+          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf9; border: 1px solid #ddd4c8;&quot;&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #607366;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 34px 30px 28px 30px; font-family: Arial, Helvetica, sans-serif; color: #1f2933;&quot;&gt;
+                
+                &lt;div style=&quot;margin: 0 0 12px 0; font-size: 14px; line-height: 22px; color: #5f6b75;&quot;&gt;
+                  Hi Jordan,
+                &lt;/div&gt;
+                
+
+                
+                &lt;h1 style=&quot;margin: 0 0 16px 0; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.03em; color: #17212b;&quot;&gt;
+                  passing this along
+                &lt;/h1&gt;
+                
+
+                
+                &lt;div style=&quot;margin: 0; font-size: 16px; line-height: 28px; color: #35424f; word-break: break-word;&quot;&gt;
+                  &lt;p&gt;Wanted to send this over while it was still fresh.&lt;/p&gt;&lt;p&gt;No ask, no funnel, just a clear note that can stand on its own.&lt;/p&gt;&lt;p&gt;If you have thoughts, reply whenever is convenient.&lt;/p&gt;
+                &lt;/div&gt;
+                
+
+                
+
+                
+                &lt;div style=&quot;height: 24px; line-height: 24px; font-size: 24px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 520px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;padding: 0;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 20px; line-height: 1.1; font-weight: 700; letter-spacing: -0.04em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      
+      &lt;div style=&quot;margin: 10px 0 8px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #7c8995;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━
+      &lt;/div&gt;
+      &lt;div style=&quot;font-size: 13px; line-height: 1.65; color: #1f2937;&quot;&gt;
+        
+        &lt;div&gt;
+          &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+        &lt;/div&gt;
+        
+        
+        &lt;div&gt;
+          &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;w4w.dev&lt;/a&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+
+            
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+          </div>
+        </section>
+      
+
+        <section class="scenario">
+          <header class="scenario-header">
+            <div>
+              <div class="eyebrow">Scenario</div>
+              <h2>Full Signature</h2>
+              <p>Longer note with CTA, footer, and the richer signature mode for comparison.</p>
+            </div>
+          </header>
+          <div class="grid">
+            
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Personal Note</h3>
+                  <p>Warm one-to-one note with the gentlest layout and the clearest reading rhythm.</p>
+                </div>
+                <div class="meta">TemplatePersonalNote</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplatePersonalNote full-signature" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f7efe4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    signature comparison preview&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f7efe4;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffaf3; border: 1px solid #e1d4c3;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 6px; line-height: 6px; font-size: 6px; background: linear-gradient(90deg, #9e6b4f 0%, #c59d77 50%, #8a9b7d 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 28px 30px 24px 30px; font-family: Georgia, 'Times New Roman', serif; color: #2a2119;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin: 0 0 18px 0;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 6px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #7a634f; border: 1px solid #e1d4c3; background-color: #fbf5ee;&quot;&gt;
+                    Personal note
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+
+              
+              &lt;div style=&quot;margin: 0 0 10px 0; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 25px; color: #5f564d;&quot;&gt;
+                Hi Taylor,
+              &lt;/div&gt;
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 14px 0; font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.04em; color: #201914;&quot;&gt;
+                a cleaner way to send thoughtful emails
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; font-size: 18px; line-height: 31px; color: #3f372f;&quot;&gt;
+                &lt;p&gt;I put together a tighter HTML email setup so the messages feel considered without going full newsletter mode.&lt;/p&gt;&lt;p&gt;This version shows the richer signature option and a little more structure.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 24px;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;border: 1px solid #b98f72; background-color: #f7ebe1;&quot;&gt;
+                    &lt;a href=&quot;https://example.com/demo&quot; style=&quot;display: inline-block; padding: 12px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 17px; font-weight: 700; color: #6f4c39; text-decoration: none; letter-spacing: 0.04em;&quot;&gt;
+                      Take a look
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+
+              
+              &lt;div style=&quot;height: 22px; line-height: 22px; font-size: 22px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+              
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;width: 16px; font-size: 16px; line-height: 16px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      &lt;div style=&quot;margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      &lt;/div&gt;
+      
+      &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 520px;&quot;&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;padding: 0 24px 0 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;&quot;&gt;@&lt;/span&gt;
+              &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;&quot;&gt;in&lt;/span&gt;
+              &lt;a href=&quot;https://linkedin.com/in/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;linkedin.com/in/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+          &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #4f6976; font-weight: 700;&quot;&gt;⌗&lt;/span&gt;
+              &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline; font-weight: 700;&quot;&gt;w4w.dev&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #374151; font-weight: 700;&quot;&gt;◼&lt;/span&gt;
+              &lt;a href=&quot;https://github.com/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;github.com/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 30px 22px 30px; font-family: Arial, Helvetica, sans-serif;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #ece0d2;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 14px; font-size: 12px; line-height: 18px; color: #7c6f64;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 4px 0;&quot;&gt;Built for clean personal sends, not blast campaigns.&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #66584d; font-weight: 600;&quot;&gt;Northline Studio&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;Remote, Worldwide&lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Brutalist</h3>
+                  <p>High-contrast personal option with more editorial edge and deliberate spacing.</p>
+                </div>
+                <div class="meta">TemplateBrutalist</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateBrutalist full-signature" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f5eee3; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    signature comparison preview&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f5eee3;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 28px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffdf8; border: 2px solid #171717;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 8px; line-height: 8px; font-size: 8px; background: linear-gradient(90deg, #171717 0%, #171717 68%, #ad7b52 68%, #ad7b52 84%, #748d67 84%, #748d67 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 30px 30px 28px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #171717;&quot;&gt;
+              &lt;div style=&quot;margin: 0 0 18px 0; font-size: 10px; line-height: 14px; font-weight: 800; letter-spacing: 1.9px; text-transform: uppercase; color: #9a6d47;&quot;&gt;
+                Crisp note
+              &lt;/div&gt;
+
+              
+              &lt;div style=&quot;margin: 0 0 14px 0; font-size: 16px; line-height: 24px; color: #3f3a36;&quot;&gt;
+                Hi Taylor,
+              &lt;/div&gt;
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 18px 0; font-size: 32px; line-height: 1.06; font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; color: #111111;&quot;&gt;
+                a cleaner way to send thoughtful emails
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; padding-left: 18px; border-left: 3px solid #171717; font-size: 16px; line-height: 27px; color: #242424;&quot;&gt;
+                &lt;p&gt;I put together a tighter HTML email setup so the messages feel considered without going full newsletter mode.&lt;/p&gt;&lt;p&gt;This version shows the richer signature option and a little more structure.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 28px;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;background-color: #171717; border: 2px solid #171717; text-align: center;&quot;&gt;
+                    &lt;a href=&quot;https://example.com/demo&quot; style=&quot;display: inline-block; padding: 12px 18px; font-size: 13px; line-height: 16px; font-weight: 800; letter-spacing: 0.9px; text-transform: uppercase; color: #ffffff; text-decoration: none;&quot;&gt;
+                      Take a look
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+
+              
+              &lt;div style=&quot;height: 26px; line-height: 26px; font-size: 26px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+              
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;width: 16px; font-size: 16px; line-height: 16px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      &lt;div style=&quot;margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      &lt;/div&gt;
+      
+      &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 520px;&quot;&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;padding: 0 24px 0 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;&quot;&gt;@&lt;/span&gt;
+              &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;&quot;&gt;in&lt;/span&gt;
+              &lt;a href=&quot;https://linkedin.com/in/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;linkedin.com/in/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+          &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #4f6976; font-weight: 700;&quot;&gt;⌗&lt;/span&gt;
+              &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline; font-weight: 700;&quot;&gt;w4w.dev&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #374151; font-weight: 700;&quot;&gt;◼&lt;/span&gt;
+              &lt;a href=&quot;https://github.com/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;github.com/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 30px 24px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #cfc6b7;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 16px; font-size: 12px; line-height: 19px; color: #5f5b57;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0;&quot;&gt;Built for clean personal sends, not blast campaigns.&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #44403c; font-weight: 700;&quot;&gt;Northline Studio&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;Remote, Worldwide&lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Minimal</h3>
+                  <p>Quiet, stripped-back personal format that keeps the copy at center stage.</p>
+                </div>
+                <div class="meta">TemplateMinimal</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateMinimal full-signature" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #f4f0e8; color: #1f2933; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    signature comparison preview&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4f0e8;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 38px 18px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; margin: 0 auto; background-color: #fffdf9; border: 1px solid #e1d8cb;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 5px; line-height: 5px; font-size: 5px; background: linear-gradient(90deg, #4d6b5d 0%, #b78b63 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 38px 40px 34px 40px; color: #1f2933;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6f7a83; white-space: nowrap;&quot;&gt;
+                          Minimal note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3d9ca;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 12px 0; font-size: 15px; line-height: 24px; color: #5a6874;&quot;&gt;
+                    Hi Taylor,
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 31px; line-height: 1.16; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      a cleaner way to send thoughtful emails
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 30px; color: #33404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;I put together a tighter HTML email setup so the messages feel considered without going full newsletter mode.&lt;/p&gt;&lt;p&gt;This version shows the richer signature option and a little more structure.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 30px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 0 0 10px 0; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6f7a83;&quot;&gt;
+                          Next step
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;
+                          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                            &lt;tr&gt;
+                              &lt;td style=&quot;border: 1px solid #d1dbe4; background-color: #f8faf8; padding: 11px 15px;&quot;&gt;
+                                &lt;a href=&quot;https://example.com/demo&quot; style=&quot;display: inline-block; font-size: 14px; line-height: 18px; font-weight: 700; color: #23313d; text-decoration: none;&quot;&gt;
+                                  &lt;span style=&quot;color: #6f7a83; font-weight: 500;&quot;&gt;Open&lt;/span&gt;
+                                  &lt;span style=&quot;color: #c8cfd7;&quot;&gt;&amp;nbsp;/&amp;nbsp;&lt;/span&gt;
+                                  Take a look &amp;rarr;
+                                &lt;/a&gt;
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/table&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 30px 0 0 0;&quot;&gt;
+                    
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;width: 16px; font-size: 16px; line-height: 16px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      &lt;div style=&quot;margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      &lt;/div&gt;
+      
+      &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 520px;&quot;&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;padding: 0 24px 0 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;&quot;&gt;@&lt;/span&gt;
+              &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;&quot;&gt;in&lt;/span&gt;
+              &lt;a href=&quot;https://linkedin.com/in/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;linkedin.com/in/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+          &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #4f6976; font-weight: 700;&quot;&gt;⌗&lt;/span&gt;
+              &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline; font-weight: 700;&quot;&gt;w4w.dev&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #374151; font-weight: 700;&quot;&gt;◼&lt;/span&gt;
+              &lt;a href=&quot;https://github.com/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;github.com/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e6ddd0;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 16px; font-size: 12px; line-height: 20px; color: #6b7681;&quot;&gt;
+                          
+                          &lt;div style=&quot;margin: 0 0 6px 0;&quot;&gt;
+                            Built for clean personal sends, not blast campaigns.
+                          &lt;/div&gt;
+                          
+                          
+                          &lt;div style=&quot;margin: 0 0 2px 0; font-weight: 600; color: #4a5966;&quot;&gt;
+                            Northline Studio
+                          &lt;/div&gt;
+                          
+                          
+                          &lt;div style=&quot;margin: 0;&quot;&gt;
+                            Remote, Worldwide
+                          &lt;/div&gt;
+                          
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-secondary">Secondary</div>
+                  <h3>Clean</h3>
+                  <p>Sharper polished frame for personal sends that need a little more finish.</p>
+                </div>
+                <div class="meta">TemplateClean</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateClean full-signature" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f3efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    signature comparison preview&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f3efe7;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 34px 14px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf8; border: 1px solid #ddd4c8;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #7f8d7d;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 34px 32px 30px 32px; font-family: Arial, Helvetica, sans-serif; color: #17212b;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Clean note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3dbcf;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 12px 0; font-size: 15px; line-height: 23px; color: #51606d;&quot;&gt;
+                    Hi Taylor,
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 30px; line-height: 1.18; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      a cleaner way to send thoughtful emails
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 29px; color: #30404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;I put together a tighter HTML email setup so the messages feel considered without going full newsletter mode.&lt;/p&gt;&lt;p&gt;This version shows the richer signature option and a little more structure.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;border: 1px solid #d6cec0; background-color: #eef3ed;&quot;&gt;
+                          &lt;a href=&quot;https://example.com/demo&quot; style=&quot;display: inline-block; padding: 12px 18px; font-size: 14px; line-height: 18px; font-weight: 700; color: #31483e; text-decoration: none;&quot;&gt;
+                            Take a look
+                          &lt;/a&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 28px; line-height: 28px; font-size: 28px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;
+                    
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;width: 16px; font-size: 16px; line-height: 16px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      &lt;div style=&quot;margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      &lt;/div&gt;
+      
+      &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 520px;&quot;&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;padding: 0 24px 0 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;&quot;&gt;@&lt;/span&gt;
+              &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;&quot;&gt;in&lt;/span&gt;
+              &lt;a href=&quot;https://linkedin.com/in/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;linkedin.com/in/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+          &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #4f6976; font-weight: 700;&quot;&gt;⌗&lt;/span&gt;
+              &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline; font-weight: 700;&quot;&gt;w4w.dev&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #374151; font-weight: 700;&quot;&gt;◼&lt;/span&gt;
+              &lt;a href=&quot;https://github.com/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;github.com/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 32px 28px 32px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e7dfd2;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 14px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 19px; color: #6a757f;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 6px 0;&quot;&gt;
+                      Built for clean personal sends, not blast campaigns.
+                    &lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #4a5763; font-weight: 700; letter-spacing: 0.2px;&quot;&gt;
+                      Northline Studio
+                    &lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;
+                      Remote, Worldwide
+                    &lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-broadcast">Broadcast</div>
+                  <h3>Newsletter</h3>
+                  <p>Broadcast layout for launches, updates, and announcements with a calmer finish.</p>
+                </div>
+                <div class="meta">TemplateNewsletter</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateNewsletter full-signature" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #eef1ea; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    signature comparison preview&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #eef1ea;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 42px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 680px; background-color: #fffdf9; border: 1px solid #d5ddd0; box-shadow: 0 16px 36px rgba(45, 58, 45, 0.08);&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0; background: linear-gradient(90deg, #24382f 0%, #40584b 74%, #c18b5c 74%, #c18b5c 100%);&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 22px 30px 18px 30px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; text-align: left;&quot;&gt;
+                    &lt;div style=&quot;font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; color: #f2c48d;&quot;&gt;
+                      Broadcast dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 8px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;&quot;&gt;
+                      Studio dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 10px; max-width: 530px; font-size: 13px; line-height: 20px; color: #d6e0d8;&quot;&gt;
+                      For launches, release notes, product updates, and the occasional more polished broadcast.
+                    &lt;/div&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #cf9466;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 32px 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Update bulletin
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #dde3d6;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0; font-family: Arial, Helvetica, sans-serif; text-align: left;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 34px; line-height: 40px; font-weight: 800; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      a cleaner way to send thoughtful emails
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 29px; color: #42505b; text-align: left; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;I put together a tighter HTML email setup so the messages feel considered without going full newsletter mode.&lt;/p&gt;&lt;p&gt;This version shows the richer signature option and a little more structure.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border: 1px solid #dce3d7; background-color: #f7faf5;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 14px 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #6d776f; text-align: left;&quot;&gt;
+                          Primary link
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 0 18px 18px 18px; text-align: left;&quot;&gt;
+                          &lt;a href=&quot;https://example.com/demo&quot; style=&quot;display: inline-block; background-color: #24382f; color: #ffffff; padding: 14px 22px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px; font-weight: 800; text-decoration: none; letter-spacing: 0.6px; border: 1px solid #24382f;&quot;&gt;
+                            Take a look
+                          &lt;/a&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 24px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e1e7db;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 14px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8f9a8f; text-align: left;&quot;&gt;
+                          Reply contact
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 10px; text-align: left; color: #56626a;&quot;&gt;
+                          
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;width: 16px; font-size: 16px; line-height: 16px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      &lt;div style=&quot;margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      &lt;/div&gt;
+      
+      &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 520px;&quot;&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;padding: 0 24px 0 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;&quot;&gt;@&lt;/span&gt;
+              &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;&quot;&gt;in&lt;/span&gt;
+              &lt;a href=&quot;https://linkedin.com/in/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;linkedin.com/in/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+          &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #4f6976; font-weight: 700;&quot;&gt;⌗&lt;/span&gt;
+              &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline; font-weight: 700;&quot;&gt;w4w.dev&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #374151; font-weight: 700;&quot;&gt;◼&lt;/span&gt;
+              &lt;a href=&quot;https://github.com/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;github.com/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border: 1px solid #d9e1d4; background-color: #f7faf5;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 14px 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #6d776f; text-align: left;&quot;&gt;
+                    Company details
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; text-align: left;&quot;&gt;
+                    Built for clean personal sends, not blast campaigns.
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 4px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #31413a; text-align: left; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;&quot;&gt;
+                    Northline Studio
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 18px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; text-align: left;&quot;&gt;
+                    Remote, Worldwide
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-legacy">Legacy</div>
+                  <h3>Classic</h3>
+                  <p>Legacy compatibility fallback for older rows and safer rendering.</p>
+                </div>
+                <div class="meta">EmailTemplate</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="EmailTemplate full-signature" srcdoc="&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;base target=&quot;_top&quot;&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin: 0; padding: 0; background-color: #f4efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+    &lt;div style=&quot;display: none; max-height: 0; max-width: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent; font-size: 1px; line-height: 1px;&quot;&gt;
+      signature comparison preview
+    &lt;/div&gt;
+
+    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4efe7;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px;&quot;&gt;
+          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf9; border: 1px solid #ddd4c8;&quot;&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #607366;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 34px 30px 28px 30px; font-family: Arial, Helvetica, sans-serif; color: #1f2933;&quot;&gt;
+                
+                &lt;div style=&quot;margin: 0 0 12px 0; font-size: 14px; line-height: 22px; color: #5f6b75;&quot;&gt;
+                  Hi Taylor,
+                &lt;/div&gt;
+                
+
+                
+                &lt;h1 style=&quot;margin: 0 0 16px 0; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.03em; color: #17212b;&quot;&gt;
+                  a cleaner way to send thoughtful emails
+                &lt;/h1&gt;
+                
+
+                
+                &lt;div style=&quot;margin: 0; font-size: 16px; line-height: 28px; color: #35424f; word-break: break-word;&quot;&gt;
+                  &lt;p&gt;I put together a tighter HTML email setup so the messages feel considered without going full newsletter mode.&lt;/p&gt;&lt;p&gt;This version shows the richer signature option and a little more structure.&lt;/p&gt;
+                &lt;/div&gt;
+                
+
+                
+                &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 26px;&quot;&gt;
+                  &lt;tr&gt;
+                    &lt;td style=&quot;background-color: #445c50; text-align: center;&quot;&gt;
+                      &lt;a href=&quot;https://example.com/demo&quot; style=&quot;display: inline-block; padding: 12px 20px; font-size: 14px; line-height: 20px; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: 0.2px;&quot;&gt;
+                        Take a look
+                      &lt;/a&gt;
+                    &lt;/td&gt;
+                  &lt;/tr&gt;
+                &lt;/table&gt;
+                
+
+                
+                &lt;div style=&quot;height: 24px; line-height: 24px; font-size: 24px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                
+&lt;table
+  role=&quot;presentation&quot;
+  cellpadding=&quot;0&quot;
+  cellspacing=&quot;0&quot;
+  border=&quot;0&quot;
+  style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;&quot;
+&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;width: 16px; font-size: 16px; line-height: 16px;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+      &lt;div
+        style=&quot;font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;&quot;
+      &gt;
+        Wyatt Walsh
+      &lt;/div&gt;
+      &lt;div style=&quot;margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;&quot;&gt;
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      &lt;/div&gt;
+      
+      &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 520px;&quot;&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;padding: 0 24px 0 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;&quot;&gt;@&lt;/span&gt;
+              &lt;a href=&quot;mailto:wyattowalsh@gmail.com&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;wyattowalsh@gmail.com&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;&quot;&gt;in&lt;/span&gt;
+              &lt;a href=&quot;https://linkedin.com/in/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;linkedin.com/in/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+          &lt;td style=&quot;padding: 0; vertical-align: top;&quot;&gt;
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #4f6976; font-weight: 700;&quot;&gt;⌗&lt;/span&gt;
+              &lt;a href=&quot;https://w4w.dev&quot; style=&quot;color: #1f2937; text-decoration: underline; font-weight: 700;&quot;&gt;w4w.dev&lt;/a&gt;
+            &lt;/div&gt;
+            
+            
+            &lt;div style=&quot;margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;&quot;&gt;
+              &lt;span style=&quot;display: inline-block; width: 16px; color: #374151; font-weight: 700;&quot;&gt;◼&lt;/span&gt;
+              &lt;a href=&quot;https://github.com/wyattowalsh&quot; style=&quot;color: #1f2937; text-decoration: underline;&quot;&gt;github.com/wyattowalsh&lt;/a&gt;
+            &lt;/div&gt;
+            
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+
+            
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 18px 30px 22px 30px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; border-top: 1px solid #e7dfd2; background-color: #faf7f1;&quot;&gt;
+                
+                &lt;div style=&quot;margin: 0 0 8px 0; color: #6d776f;&quot;&gt;
+                  Built for clean personal sends, not blast campaigns.
+                &lt;/div&gt;
+                
+                
+                &lt;div style=&quot;margin: 0 0 4px 0; color: #44504f; font-weight: 700; letter-spacing: 0.2px;&quot;&gt;
+                  Northline Studio
+                &lt;/div&gt;
+                
+                
+                &lt;div style=&quot;margin: 0; color: #6d776f;&quot;&gt;
+                  Remote, Worldwide
+                &lt;/div&gt;
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+          </div>
+        </section>
+      
+
+        <section class="scenario">
+          <header class="scenario-header">
+            <div>
+              <div class="eyebrow">Scenario</div>
+              <h2>Broadcast Update</h2>
+              <p>A campaign-style update to show how the broadcast template separates itself from the personal set.</p>
+            </div>
+          </header>
+          <div class="grid">
+            
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Personal Note</h3>
+                  <p>Warm one-to-one note with the gentlest layout and the clearest reading rhythm.</p>
+                </div>
+                <div class="meta">TemplatePersonalNote</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplatePersonalNote broadcast-update" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f7efe4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    launches, updates, and changelog-style sends&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f7efe4;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffaf3; border: 1px solid #e1d4c3;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 6px; line-height: 6px; font-size: 6px; background: linear-gradient(90deg, #9e6b4f 0%, #c59d77 50%, #8a9b7d 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 28px 30px 24px 30px; font-family: Georgia, 'Times New Roman', serif; color: #2a2119;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin: 0 0 18px 0;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 6px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #7a634f; border: 1px solid #e1d4c3; background-color: #fbf5ee;&quot;&gt;
+                    Personal note
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 14px 0; font-size: 30px; line-height: 36px; font-weight: 700; letter-spacing: -0.04em; color: #201914;&quot;&gt;
+                studio dispatch: what shipped this week
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; font-size: 18px; line-height: 31px; color: #3f372f;&quot;&gt;
+                &lt;p&gt;Quick dispatch:&lt;/p&gt;&lt;p&gt;We shipped the new compose flow, rebuilt the preview system, and cleaned up the queue actions.&lt;/p&gt;&lt;p&gt;Next up is template polish and draft-first sending improvements.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 24px;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;border: 1px solid #b98f72; background-color: #f7ebe1;&quot;&gt;
+                    &lt;a href=&quot;https://example.com/changelog&quot; style=&quot;display: inline-block; padding: 12px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 17px; font-weight: 700; color: #6f4c39; text-decoration: none; letter-spacing: 0.04em;&quot;&gt;
+                      Read the update
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 30px 22px 30px; font-family: Arial, Helvetica, sans-serif;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #ece0d2;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 14px; font-size: 12px; line-height: 18px; color: #7c6f64;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 4px 0;&quot;&gt;For product updates, release notes, and launch follow-ups.&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #66584d; font-weight: 600;&quot;&gt;Gmail Studio&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;Los Angeles, CA&lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Brutalist</h3>
+                  <p>High-contrast personal option with more editorial edge and deliberate spacing.</p>
+                </div>
+                <div class="meta">TemplateBrutalist</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateBrutalist broadcast-update" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f5eee3; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    launches, updates, and changelog-style sends&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f5eee3;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 28px 12px 36px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 640px; background-color: #fffdf8; border: 2px solid #171717;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 8px; line-height: 8px; font-size: 8px; background: linear-gradient(90deg, #171717 0%, #171717 68%, #ad7b52 68%, #ad7b52 84%, #748d67 84%, #748d67 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 30px 30px 28px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #171717;&quot;&gt;
+              &lt;div style=&quot;margin: 0 0 18px 0; font-size: 10px; line-height: 14px; font-weight: 800; letter-spacing: 1.9px; text-transform: uppercase; color: #9a6d47;&quot;&gt;
+                Crisp note
+              &lt;/div&gt;
+
+              
+
+              
+              &lt;h1 style=&quot;margin: 0 0 18px 0; font-size: 32px; line-height: 1.06; font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; color: #111111;&quot;&gt;
+                studio dispatch: what shipped this week
+              &lt;/h1&gt;
+              
+
+              &lt;div style=&quot;margin: 0; padding-left: 18px; border-left: 3px solid #171717; font-size: 16px; line-height: 27px; color: #242424;&quot;&gt;
+                &lt;p&gt;Quick dispatch:&lt;/p&gt;&lt;p&gt;We shipped the new compose flow, rebuilt the preview system, and cleaned up the queue actions.&lt;/p&gt;&lt;p&gt;Next up is template polish and draft-first sending improvements.&lt;/p&gt;
+              &lt;/div&gt;
+
+              
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 28px;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;background-color: #171717; border: 2px solid #171717; text-align: center;&quot;&gt;
+                    &lt;a href=&quot;https://example.com/changelog&quot; style=&quot;display: inline-block; padding: 12px 18px; font-size: 13px; line-height: 16px; font-weight: 800; letter-spacing: 0.9px; text-transform: uppercase; color: #ffffff; text-decoration: none;&quot;&gt;
+                      Read the update
+                    &lt;/a&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+              
+
+              
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 30px 24px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #cfc6b7;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 16px; font-size: 12px; line-height: 19px; color: #5f5b57;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0;&quot;&gt;For product updates, release notes, and launch follow-ups.&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #44403c; font-weight: 700;&quot;&gt;Gmail Studio&lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;Los Angeles, CA&lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-active">Active</div>
+                  <h3>Minimal</h3>
+                  <p>Quiet, stripped-back personal format that keeps the copy at center stage.</p>
+                </div>
+                <div class="meta">TemplateMinimal</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateMinimal broadcast-update" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #f4f0e8; color: #1f2933; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    launches, updates, and changelog-style sends&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4f0e8;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 38px 18px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; width: 100%; max-width: 620px; margin: 0 auto; background-color: #fffdf9; border: 1px solid #e1d8cb;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 5px; line-height: 5px; font-size: 5px; background: linear-gradient(90deg, #4d6b5d 0%, #b78b63 100%);&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 38px 40px 34px 40px; color: #1f2933;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6f7a83; white-space: nowrap;&quot;&gt;
+                          Minimal note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3d9ca;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 31px; line-height: 1.16; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      studio dispatch: what shipped this week
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 30px; color: #33404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;Quick dispatch:&lt;/p&gt;&lt;p&gt;We shipped the new compose flow, rebuilt the preview system, and cleaned up the queue actions.&lt;/p&gt;&lt;p&gt;Next up is template polish and draft-first sending improvements.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 30px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 0 0 10px 0; font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6f7a83;&quot;&gt;
+                          Next step
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;
+                          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                            &lt;tr&gt;
+                              &lt;td style=&quot;border: 1px solid #d1dbe4; background-color: #f8faf8; padding: 11px 15px;&quot;&gt;
+                                &lt;a href=&quot;https://example.com/changelog&quot; style=&quot;display: inline-block; font-size: 14px; line-height: 18px; font-weight: 700; color: #23313d; text-decoration: none;&quot;&gt;
+                                  &lt;span style=&quot;color: #6f7a83; font-weight: 500;&quot;&gt;Open&lt;/span&gt;
+                                  &lt;span style=&quot;color: #c8cfd7;&quot;&gt;&amp;nbsp;/&amp;nbsp;&lt;/span&gt;
+                                  Read the update &amp;rarr;
+                                &lt;/a&gt;
+                              &lt;/td&gt;
+                            &lt;/tr&gt;
+                          &lt;/table&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e6ddd0;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding-top: 16px; font-size: 12px; line-height: 20px; color: #6b7681;&quot;&gt;
+                          
+                          &lt;div style=&quot;margin: 0 0 6px 0;&quot;&gt;
+                            For product updates, release notes, and launch follow-ups.
+                          &lt;/div&gt;
+                          
+                          
+                          &lt;div style=&quot;margin: 0 0 2px 0; font-weight: 600; color: #4a5966;&quot;&gt;
+                            Gmail Studio
+                          &lt;/div&gt;
+                          
+                          
+                          &lt;div style=&quot;margin: 0;&quot;&gt;
+                            Los Angeles, CA
+                          &lt;/div&gt;
+                          
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-secondary">Secondary</div>
+                  <h3>Clean</h3>
+                  <p>Sharper polished frame for personal sends that need a little more finish.</p>
+                </div>
+                <div class="meta">TemplateClean</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateClean broadcast-update" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #f3efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    launches, updates, and changelog-style sends&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f3efe7;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 34px 14px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf8; border: 1px solid #ddd4c8;&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #7f8d7d;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 34px 32px 30px 32px; font-family: Arial, Helvetica, sans-serif; color: #17212b;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-size: 10px; line-height: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Clean note
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #e3dbcf;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 16px 0;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 30px; line-height: 1.18; font-weight: 700; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      studio dispatch: what shipped this week
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-size: 16px; line-height: 29px; color: #30404d; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;Quick dispatch:&lt;/p&gt;&lt;p&gt;We shipped the new compose flow, rebuilt the preview system, and cleaned up the queue actions.&lt;/p&gt;&lt;p&gt;Next up is template polish and draft-first sending improvements.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;border: 1px solid #d6cec0; background-color: #eef3ed;&quot;&gt;
+                          &lt;a href=&quot;https://example.com/changelog&quot; style=&quot;display: inline-block; padding: 12px 18px; font-size: 14px; line-height: 18px; font-weight: 700; color: #31483e; text-decoration: none;&quot;&gt;
+                            Read the update
+                          &lt;/a&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 32px 28px 32px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border-top: 1px solid #e7dfd2;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding-top: 14px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 19px; color: #6a757f;&quot;&gt;
+                    
+                    &lt;div style=&quot;margin: 0 0 6px 0;&quot;&gt;
+                      For product updates, release notes, and launch follow-ups.
+                    &lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0 0 2px 0; color: #4a5763; font-weight: 700; letter-spacing: 0.2px;&quot;&gt;
+                      Gmail Studio
+                    &lt;/div&gt;
+                    
+                    
+                    &lt;div style=&quot;margin: 0;&quot;&gt;
+                      Los Angeles, CA
+                    &lt;/div&gt;
+                    
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-broadcast">Broadcast</div>
+                  <h3>Newsletter</h3>
+                  <p>Broadcast layout for launches, updates, and announcements with a calmer finish.</p>
+                </div>
+                <div class="meta">TemplateNewsletter</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="TemplateNewsletter broadcast-update" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;base target=&quot;_top&quot;&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; padding: 0; background-color: #eef1ea; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+  &lt;div style=&quot;display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;&quot;&gt;
+    launches, updates, and changelog-style sends&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;&amp;nbsp;&amp;zwnj;
+  &lt;/div&gt;
+
+  &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #eef1ea;&quot;&gt;
+    &lt;tr&gt;
+      &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px 42px 12px;&quot;&gt;
+        &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 680px; background-color: #fffdf9; border: 1px solid #d5ddd0; box-shadow: 0 16px 36px rgba(45, 58, 45, 0.08);&quot;&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0; background: linear-gradient(90deg, #24382f 0%, #40584b 74%, #c18b5c 74%, #c18b5c 100%);&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 22px 30px 18px 30px; font-family: Arial, Helvetica, sans-serif; color: #ffffff; text-align: left;&quot;&gt;
+                    &lt;div style=&quot;font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; color: #f2c48d;&quot;&gt;
+                      Broadcast dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 8px; font-size: 28px; line-height: 32px; font-weight: 800; letter-spacing: -0.02em; color: #ffffff;&quot;&gt;
+                      Studio dispatch
+                    &lt;/div&gt;
+                    &lt;div style=&quot;margin-top: 10px; max-width: 530px; font-size: 13px; line-height: 20px; color: #d6e0d8;&quot;&gt;
+                      For launches, release notes, product updates, and the occasional more polished broadcast.
+                    &lt;/div&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #cf9466;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 32px 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: #6d776f; white-space: nowrap;&quot;&gt;
+                          Update bulletin
+                        &lt;/td&gt;
+                        &lt;td style=&quot;padding-left: 12px; width: 100%;&quot;&gt;
+                          &lt;div style=&quot;height: 1px; line-height: 1px; font-size: 1px; background-color: #dde3d6;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 0 18px 0; font-family: Arial, Helvetica, sans-serif; text-align: left;&quot;&gt;
+                    &lt;h1 style=&quot;margin: 0; font-size: 34px; line-height: 40px; font-weight: 800; letter-spacing: -0.04em; color: #17212b;&quot;&gt;
+                      studio dispatch: what shipped this week
+                    &lt;/h1&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 29px; color: #42505b; text-align: left; word-break: break-word;&quot;&gt;
+                    &lt;p&gt;Quick dispatch:&lt;/p&gt;&lt;p&gt;We shipped the new compose flow, rebuilt the preview system, and cleaned up the queue actions.&lt;/p&gt;&lt;p&gt;Next up is template polish and draft-first sending improvements.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 28px 0 0 0;&quot;&gt;
+                    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border: 1px solid #dce3d7; background-color: #f7faf5;&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 14px 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #6d776f; text-align: left;&quot;&gt;
+                          Primary link
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td style=&quot;padding: 0 18px 18px 18px; text-align: left;&quot;&gt;
+                          &lt;a href=&quot;https://example.com/changelog&quot; style=&quot;display: inline-block; background-color: #24382f; color: #ffffff; padding: 14px 22px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px; font-weight: 800; text-decoration: none; letter-spacing: 0.6px; border: 1px solid #24382f;&quot;&gt;
+                            Read the update
+                          &lt;/a&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+
+          
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 0 34px 30px 34px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; border: 1px solid #d9e1d4; background-color: #f7faf5;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 14px 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #6d776f; text-align: left;&quot;&gt;
+                    Company details
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 8px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; text-align: left;&quot;&gt;
+                    For product updates, release notes, and launch follow-ups.
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 4px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #31413a; text-align: left; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;&quot;&gt;
+                    Gmail Studio
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+                
+                &lt;tr&gt;
+                  &lt;td style=&quot;padding: 0 18px 18px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; text-align: left;&quot;&gt;
+                    Los Angeles, CA
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                
+              &lt;/table&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          
+        &lt;/table&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="eyebrow eyebrow-legacy">Legacy</div>
+                  <h3>Classic</h3>
+                  <p>Legacy compatibility fallback for older rows and safer rendering.</p>
+                </div>
+                <div class="meta">EmailTemplate</div>
+              </div>
+              <div class="iframe-wrap">
+                <iframe title="EmailTemplate broadcast-update" srcdoc="&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;base target=&quot;_top&quot;&gt;
+  &lt;/head&gt;
+  &lt;body style=&quot;margin: 0; padding: 0; background-color: #f4efe7; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;&quot;&gt;
+    &lt;div style=&quot;display: none; max-height: 0; max-width: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent; font-size: 1px; line-height: 1px;&quot;&gt;
+      launches, updates, and changelog-style sends
+    &lt;/div&gt;
+
+    &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; background-color: #f4efe7;&quot;&gt;
+      &lt;tr&gt;
+        &lt;td align=&quot;center&quot; style=&quot;padding: 30px 12px;&quot;&gt;
+          &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot; style=&quot;border-collapse: collapse; max-width: 620px; background-color: #fffdf9; border: 1px solid #ddd4c8;&quot;&gt;
+            &lt;tr&gt;
+              &lt;td style=&quot;height: 4px; line-height: 4px; font-size: 4px; background-color: #607366;&quot;&gt;&amp;nbsp;&lt;/td&gt;
+            &lt;/tr&gt;
+
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 34px 30px 28px 30px; font-family: Arial, Helvetica, sans-serif; color: #1f2933;&quot;&gt;
+                
+
+                
+                &lt;h1 style=&quot;margin: 0 0 16px 0; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.03em; color: #17212b;&quot;&gt;
+                  studio dispatch: what shipped this week
+                &lt;/h1&gt;
+                
+
+                
+                &lt;div style=&quot;margin: 0; font-size: 16px; line-height: 28px; color: #35424f; word-break: break-word;&quot;&gt;
+                  &lt;p&gt;Quick dispatch:&lt;/p&gt;&lt;p&gt;We shipped the new compose flow, rebuilt the preview system, and cleaned up the queue actions.&lt;/p&gt;&lt;p&gt;Next up is template polish and draft-first sending improvements.&lt;/p&gt;
+                &lt;/div&gt;
+                
+
+                
+                &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;border-collapse: collapse; margin-top: 26px;&quot;&gt;
+                  &lt;tr&gt;
+                    &lt;td style=&quot;background-color: #445c50; text-align: center;&quot;&gt;
+                      &lt;a href=&quot;https://example.com/changelog&quot; style=&quot;display: inline-block; padding: 12px 20px; font-size: 14px; line-height: 20px; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: 0.2px;&quot;&gt;
+                        Read the update
+                      &lt;/a&gt;
+                    &lt;/td&gt;
+                  &lt;/tr&gt;
+                &lt;/table&gt;
+                
+
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+
+            
+            &lt;tr&gt;
+              &lt;td style=&quot;padding: 18px 30px 22px 30px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; color: #66727b; border-top: 1px solid #e7dfd2; background-color: #faf7f1;&quot;&gt;
+                
+                &lt;div style=&quot;margin: 0 0 8px 0; color: #6d776f;&quot;&gt;
+                  For product updates, release notes, and launch follow-ups.
+                &lt;/div&gt;
+                
+                
+                &lt;div style=&quot;margin: 0 0 4px 0; color: #44504f; font-weight: 700; letter-spacing: 0.2px;&quot;&gt;
+                  Gmail Studio
+                &lt;/div&gt;
+                
+                
+                &lt;div style=&quot;margin: 0; color: #6d776f;&quot;&gt;
+                  Los Angeles, CA
+                &lt;/div&gt;
+                
+              &lt;/td&gt;
+            &lt;/tr&gt;
+            
+          &lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+              </div>
+            </article>
+          
+          </div>
+        </section>
+      
+    </main>
+  </body>
+</html>

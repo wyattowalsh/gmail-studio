@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5eee3; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+  <div style="display: none; max-height: 0; overflow: hidden; opacity: 0; mso-hide: all; color: transparent;">
+    <?= preview_text || headline || '' ?>&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </div>
+
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse; background-color: #f5eee3;">
+    <tr>
+      <td align="center" style="padding: 28px 12px 36px 12px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse; max-width: 640px; background-color: #fffdf8; border: 2px solid #171717;">
+          <tr>
+            <td style="height: 8px; line-height: 8px; font-size: 8px; background: linear-gradient(90deg, #171717 0%, #171717 68%, #ad7b52 68%, #ad7b52 84%, #748d67 84%, #748d67 100%);">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="padding: 30px 30px 28px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #171717;">
+              <div style="margin: 0 0 18px 0; font-size: 10px; line-height: 14px; font-weight: 800; letter-spacing: 1.9px; text-transform: uppercase; color: #9a6d47;">
+                Crisp note
+              </div>
+
+              <? if (first_name) { ?>
+              <div style="margin: 0 0 14px 0; font-size: 16px; line-height: 24px; color: #3f3a36;">
+                Hi <?= first_name ?>,
+              </div>
+              <? } ?>
+
+              <? if (headline) { ?>
+              <h1 style="margin: 0 0 18px 0; font-size: 32px; line-height: 1.06; font-weight: 900; letter-spacing: -0.06em; text-transform: uppercase; color: #111111;">
+                <?= headline ?>
+              </h1>
+              <? } ?>
+
+              <div style="margin: 0; padding-left: 18px; border-left: 3px solid #171717; font-size: 16px; line-height: 27px; color: #242424;">
+                <?!= body_html || '' ?>
+              </div>
+
+              <? if (cta_url) { ?>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; margin-top: 28px;">
+                <tr>
+                  <td style="background-color: #171717; border: 2px solid #171717; text-align: center;">
+                    <a href="<?= cta_url ?>" style="display: inline-block; padding: 12px 18px; font-size: 13px; line-height: 16px; font-weight: 800; letter-spacing: 0.9px; text-transform: uppercase; color: #ffffff; text-decoration: none;">
+                      <?= cta_text || 'See it' ?>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <? } ?>
+
+              <? if (include_signature) { ?>
+              <div style="height: 26px; line-height: 26px; font-size: 26px;">&nbsp;</div>
+              <?!= include('Signature') ?>
+              <? } ?>
+            </td>
+          </tr>
+
+          <? if (footer_note || footer_company || footer_address) { ?>
+          <tr>
+            <td style="padding: 0 30px 24px 30px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse; border-top: 1px solid #cfc6b7;">
+                <tr>
+                  <td style="padding-top: 16px; font-size: 12px; line-height: 19px; color: #5f5b57;">
+                    <? if (footer_note) { ?>
+                    <div style="margin: 0 0 2px 0;"><?= footer_note ?></div>
+                    <? } ?>
+                    <? if (footer_company) { ?>
+                    <div style="margin: 0 0 2px 0; color: #44403c; font-weight: 700;"><?= footer_company ?></div>
+                    <? } ?>
+                    <? if (footer_address) { ?>
+                    <div style="margin: 0;"><?= footer_address ?></div>
+                    <? } ?>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <? } ?>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
