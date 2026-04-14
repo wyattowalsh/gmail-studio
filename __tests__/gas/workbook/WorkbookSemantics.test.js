@@ -1,4 +1,6 @@
-const schema = require('../Schema');
+const path = require('node:path');
+
+const schema = require(path.resolve(process.cwd(), 'src/gas/core/Schema.js'));
 
 Object.assign(global, schema);
 
@@ -16,7 +18,7 @@ const {
   getQueueSlicerDefinitions_,
   refreshOperatorSafeguards,
   refreshQueueViews,
-} = require('../WorkbookSemantics');
+} = require(path.resolve(process.cwd(), 'src/gas/workbook/WorkbookSemantics.js'));
 
 class FakeMetadata {
   constructor(owner, key, value) {

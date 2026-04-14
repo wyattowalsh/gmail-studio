@@ -1,3 +1,7 @@
+const path = require('node:path');
+
+const templateRendererPath = path.resolve(process.cwd(), 'src/gas/core/TemplateRenderer.js');
+
 describe('TemplateRenderer', () => {
   let renderHtmlTemplate;
   let templates;
@@ -28,7 +32,7 @@ describe('TemplateRenderer', () => {
       }),
     };
 
-    renderHtmlTemplate = require('../TemplateRenderer').renderHtmlTemplate;
+    renderHtmlTemplate = require(templateRendererPath).renderHtmlTemplate;
   });
 
   test('renders the resolved template file', () => {

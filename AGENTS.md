@@ -19,14 +19,16 @@ Gmail Studio is a "Headless Spreadsheet" system. The Spreadsheet acts as the dat
 
 ## 📁 Project Structure
 - `src/gas/`: Canonical Apps Script source grouped by domain.
+- `src/gas/entrypoints/`: Thin Apps Script wrappers that own public global function names.
+- `src/gas/controllers/`: Controller implementations behind the Apps Script wrappers.
 - `/`: Flat Apps Script deploy files generated from `src/gas/` plus repo-level scripts/artifacts.
 - `ui/`: Modern React frontend source.
-- `__tests__/`: Jest suites for core logic.
+- `__tests__/gas/`: Jest suites organized to mirror `src/gas/`.
 - `.github/workflows/`: Automation pipelines.
 
 ## 🤖 Agent Roles & Instructions
 
-### ✉️ Email Logic Agent (EmailSender.js, Sequences.js)
+### ✉️ Email Logic Agent (`src/gas/controllers/EmailSenderController.js`, `src/gas/core/Sequences.js`)
 - **Mandate:** Ensure 100% reliability in delivery and state tracking.
 - **Rule:** Always check `MailApp.getRemainingDailyQuota()` before batch operations.
 - **Rule:** Never send an email if the `status` is already `SENT`.
@@ -38,14 +40,14 @@ Gmail Studio is a "Headless Spreadsheet" system. The Spreadsheet acts as the dat
 - **Rule:** All interactions with the server must use `google.script.run`.
 - **Rule:** Implement "Optimistic UI" patterns where possible.
 
-### 📊 Data & Analytics Agent (Analytics.js, SheetData.js)
+### 📊 Data & Analytics Agent (`src/gas/controllers/AnalyticsController.js`, `src/gas/core/SheetData.js`)
 - **Mandate:** Treat the Spreadsheet as a relational database.
 - **Rule:** Use `getDataRange().getValues()` once per request instead of multiple `getRange()` calls.
 - **Rule:** Analytics logging should never block the main execution flow (use try/catch).
 
 ## 🚀 Workflows
 - **New Feature:** Research -> Update `AGENTS.md` if architecture changes -> Implement -> Test -> Push.
-- **Apps Script Change:** Edit `src/gas/` -> `pnpm sync:gas` -> Test/Push.
+- **Apps Script Change:** Edit controllers/core/workbook/templates in `src/gas/`, keep runtime globals in `src/gas/entrypoints/`, then `pnpm sync:gas` -> Test/Push.
 - **UI Change:** Work in `ui/` -> Build -> Deploy.
 - **Bug Fix:** Reproduce in `__tests__/` -> Fix -> Verify.
 

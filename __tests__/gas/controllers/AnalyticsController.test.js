@@ -1,3 +1,7 @@
+const path = require('node:path');
+
+const analyticsControllerPath = path.resolve(process.cwd(), 'src/gas/controllers/AnalyticsController.js');
+
 describe('Analytics', () => {
   let analytics;
   let cache;
@@ -53,7 +57,7 @@ describe('Analytics', () => {
       })),
     };
 
-    analytics = require('../Analytics');
+    analytics = require(analyticsControllerPath);
   });
 
   test('getAnalyticsSummary computes counts and caches the result', () => {

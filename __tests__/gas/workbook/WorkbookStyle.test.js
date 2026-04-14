@@ -1,4 +1,6 @@
-const schema = require('../Schema');
+const path = require('node:path');
+
+const schema = require(path.resolve(process.cwd(), 'src/gas/core/Schema.js'));
 
 Object.assign(global, schema);
 
@@ -15,7 +17,9 @@ global.SpreadsheetApp = {
   }),
 };
 
-const { applyWorkbookPresentation_, findStartHereCandidateName, refreshStartHereSheet_ } = require('../WorkbookStyle');
+const { applyWorkbookPresentation_, findStartHereCandidateName, refreshStartHereSheet_ } = require(
+  path.resolve(process.cwd(), 'src/gas/workbook/WorkbookStyle.js')
+);
 
 function columnToNumber(letters) {
   return String(letters)

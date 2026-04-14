@@ -1,6 +1,11 @@
-const { normalizeAndValidatePayload, isValidEmail, isValidHttpUrl } = require('../Validation');
-const { buildSignatureData } = require('../Config');
-const { DELIVERY_MODES, SIGNATURE_MODES, getDefaultTemplateId, resolveTemplateDefinition } = require('../Schema');
+const path = require('node:path');
+
+const validationPath = path.resolve(process.cwd(), 'src/gas/core/Validation.js');
+const configPath = path.resolve(process.cwd(), 'src/gas/core/Config.js');
+const schemaPath = path.resolve(process.cwd(), 'src/gas/core/Schema.js');
+const { normalizeAndValidatePayload, isValidEmail, isValidHttpUrl } = require(validationPath);
+const { buildSignatureData } = require(configPath);
+const { DELIVERY_MODES, SIGNATURE_MODES, getDefaultTemplateId, resolveTemplateDefinition } = require(schemaPath);
 
 global.DELIVERY_MODES = DELIVERY_MODES;
 global.SIGNATURE_MODES = SIGNATURE_MODES;

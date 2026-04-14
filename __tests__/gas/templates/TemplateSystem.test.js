@@ -1,10 +1,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const { DEFAULT_CONFIG, buildSignatureData } = require('../Config');
-const { getTemplateRegistry, getSelectableTemplateNames } = require('../Schema');
+const configPath = path.resolve(process.cwd(), 'src/gas/core/Config.js');
+const schemaPath = path.resolve(process.cwd(), 'src/gas/core/Schema.js');
+const templatesDirectory = path.resolve(process.cwd(), 'src/gas/templates');
+const { DEFAULT_CONFIG, buildSignatureData } = require(configPath);
+const { getTemplateRegistry, getSelectableTemplateNames } = require(schemaPath);
 
-const rootDirectory = path.resolve(__dirname, '..');
+const rootDirectory = templatesDirectory;
 
 function readFile(relativePath) {
   return fs.readFileSync(path.join(rootDirectory, relativePath), 'utf8');

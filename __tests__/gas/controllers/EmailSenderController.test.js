@@ -1,4 +1,8 @@
-const { DELIVERY_MODES } = require('../Schema');
+const path = require('node:path');
+
+const schemaPath = path.resolve(process.cwd(), 'src/gas/core/Schema.js');
+const emailSenderControllerPath = path.resolve(process.cwd(), 'src/gas/controllers/EmailSenderController.js');
+const { DELIVERY_MODES } = require(schemaPath);
 
 describe('EmailSender', () => {
   let emailSender;
@@ -70,7 +74,7 @@ describe('EmailSender', () => {
     global.getComposePayload = jest.fn();
     global.getSelectedOutboundPayload = jest.fn();
 
-    emailSender = require('../EmailSender');
+    emailSender = require(emailSenderControllerPath);
   });
 
   test('sendScheduledBatch sends only due SEND payloads within headroom-adjusted quota', () => {

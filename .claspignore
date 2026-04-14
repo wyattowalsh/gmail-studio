@@ -1,5 +1,7 @@
 # Ignore everything in ui/ except for what we build
 ui/**
+src/**
+scripts/**
 node_modules/**
 __tests__/**
 .git/**
@@ -13,6 +15,7 @@ jest.config.cjs
 README.md
 AGENTS.md
 plans/**
+template-previews.html
 
 # Keep core script files
 !*.js

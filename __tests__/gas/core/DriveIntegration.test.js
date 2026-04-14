@@ -1,9 +1,11 @@
-const path = require('path');
+const path = require('node:path');
+
+const driveIntegrationPath = path.resolve(process.cwd(), 'src/gas/core/DriveIntegration.js');
 
 function loadDriveIntegration(globals) {
   jest.resetModules();
   Object.assign(global, globals);
-  return require(path.join('..', 'DriveIntegration'));
+  return require(driveIntegrationPath);
 }
 
 describe('DriveIntegration', () => {

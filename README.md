@@ -27,13 +27,14 @@ See also: [`ui/README.md`](./ui/README.md)
 
 ## Repository layout
 
-- `src/gas/app/` — Apps Script entrypoints and public handlers (`onOpen`, `doGet`, send/draft actions, previews, triggers)
+- `src/gas/entrypoints/` — thin Apps Script-facing wrappers that define the public GAS globals
+- `src/gas/controllers/` — delivery, menu, analytics, automation, and preview implementations behind those wrappers
 - `src/gas/workbook/` — workbook construction, presentation, and safeguard logic
 - `src/gas/core/` — shared schema, validation, config, data, template, and integration helpers
 - `src/gas/templates/` — HTML email and preview partials used by Apps Script
 - `/` — generated flat deploy files for Apps Script plus repo-level scripts and committed artifacts
 - `ui/` — React sidebar source
-- `__tests__/` — Jest suites for backend behavior
+- `__tests__/gas/` — Jest suites organized to mirror `src/gas`
 
 ## Spreadsheet contract
 
@@ -219,6 +220,8 @@ pnpm push
 Notes:
 
 - `src/gas/` is the source of truth for Apps Script code. The flat root `.js` / `.html` / `appsscript.json` files are generated deploy copies.
+- `src/gas/entrypoints/` is the only layer that should define public Apps Script global names such as `onOpen`, `doGet`, and `sendScheduledBatch`.
+- `src/gas/controllers/` keeps implementation code out of the runtime-facing wrapper files while preserving the same deploy-time globals.
 - `pnpm sync:gas` refreshes the flat deploy root from `src/gas` before lint, tests, preview generation, and push.
 - `pnpm adopt:gas` is the reverse sync used after `clasp pull`.
 - `pnpm build:ui` runs the UI install/build and then copies `ui/dist-sidebar/Sidebar.html` to the root `Sidebar.html` used by Apps Script.
@@ -257,6 +260,9 @@ So deployment is automatic only for successful pushes to `main`, and it pushes t
 
 ## Key files
 
+- `src/gas/entrypoints/EmailSender.js` — public GAS send/draft entrypoints
+- `src/gas/controllers/EmailSenderController.js` — send, draft, quota, and queue processing logic
+- `src/gas/controllers/MenuController.js` — sidebar/menu/scheduler behavior
 - `src/gas/core/Schema.js` — canonical sheet names, template registry, headers, delivery modes, statuses
 - `src/gas/workbook/Setup.js` — creates and formats the spreadsheet contract
 - `src/gas/workbook/WorkbookSemantics.js` — semantic anchors, warning-only protections, and optional `Outbound` queue views

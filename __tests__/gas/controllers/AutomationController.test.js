@@ -1,19 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const vm = require('vm');
+const path = require('node:path');
+
+const automationControllerPath = path.resolve(process.cwd(), 'src/gas/controllers/AutomationController.js');
 
 function loadAutomationModule(sandbox) {
-  const filePath = path.join(__dirname, '..', 'Automation.js');
-  const source = fs.readFileSync(filePath, 'utf8');
-  const module = { exports: {} };
-
-  vm.runInNewContext(`${source}\nmodule.exports = { handleReadyRow_, notifyUser, onEdit };`, {
-    module: module,
-    exports: module.exports,
-    ...sandbox,
-  });
-
-  return module.exports;
+  jest.resetModules();
+  Object.assign(global, sandbox);
+  return require(automationControllerPath);
 }
 
 describe('Automation', () => {

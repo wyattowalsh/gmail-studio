@@ -1,19 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const vm = require('vm');
+const path = require('node:path');
+
+const menuControllerPath = path.resolve(process.cwd(), 'src/gas/controllers/MenuController.js');
 
 function loadMenuModule(sandbox) {
-  const filePath = path.join(__dirname, '..', 'Menu.js');
-  const source = fs.readFileSync(filePath, 'utf8');
-  const module = { exports: {} };
-
-  vm.runInNewContext(`${source}\nmodule.exports = { onOpen, openSidebar, startScheduler, stopScheduler };`, {
-    module: module,
-    exports: module.exports,
-    ...sandbox,
-  });
-
-  return module.exports;
+  jest.resetModules();
+  Object.assign(global, sandbox);
+  return require(menuControllerPath);
 }
 
 describe('Menu', () => {
