@@ -1,13 +1,13 @@
 # Gmail Studio
 
-Gmail Studio is a Google Apps Script email tool built around a spreadsheet contract plus a React sidebar. The spreadsheet stores compose inputs, queue state, config, and optional analytics; Apps Script handles validation, drafting/sending, scheduling, and template rendering; the `ui/` app bundles into the root `Sidebar.html` used by Apps Script.
+Gmail Studio is a Google Apps Script email tool built around a spreadsheet contract plus a React sidebar. The spreadsheet stores compose inputs, queue state, config, and optional analytics; Apps Script handles validation, drafting/sending, scheduling, and template rendering; the `ui/` app bundles into `dist/gas/Sidebar.html` for Apps Script deployment.
 
-The repository now uses a source/deploy split for Apps Script:
+The repository now uses a clean source/deploy split for Apps Script:
 
 - `src/gas/` is the canonical source tree, grouped by responsibility.
-- `/` keeps the flat Apps Script deploy surface that `clasp` pushes.
-- `pnpm sync:gas` regenerates the flat root files from `src/gas`.
-- `pnpm adopt:gas` copies a freshly pulled flat Apps Script root back into `src/gas`.
+- `dist/gas/` is the generated flat deploy surface that `clasp` pushes.
+- `pnpm sync:gas` regenerates `dist/gas` from `src/gas`.
+- `pnpm adopt:gas` copies a freshly pulled `dist/gas` deploy tree back into `src/gas`.
 
 See also: [`ui/README.md`](./ui/README.md)
 
@@ -32,7 +32,8 @@ See also: [`ui/README.md`](./ui/README.md)
 - `src/gas/workbook/` — workbook construction, presentation, and safeguard logic
 - `src/gas/core/` — shared schema, validation, config, data, template, and integration helpers
 - `src/gas/templates/` — HTML email and preview partials used by Apps Script
-- `/` — generated flat deploy files for Apps Script plus repo-level scripts and committed artifacts
+- `dist/gas/` — generated flat Apps Script deploy output for `clasp`
+- `/` — repo-level scripts, docs, generated previews, and project config
 - `ui/` — React sidebar source
 - `__tests__/gas/` — Jest suites organized to mirror `src/gas`
 
@@ -219,12 +220,12 @@ pnpm push
 
 Notes:
 
-- `src/gas/` is the source of truth for Apps Script code. The flat root `.js` / `.html` / `appsscript.json` files are generated deploy copies.
+- `src/gas/` is the source of truth for Apps Script code. `dist/gas/` is generated deploy output.
 - `src/gas/entrypoints/` is the only layer that should define public Apps Script global names such as `onOpen`, `doGet`, and `sendScheduledBatch`.
 - `src/gas/controllers/` keeps implementation code out of the runtime-facing wrapper files while preserving the same deploy-time globals.
-- `pnpm sync:gas` refreshes the flat deploy root from `src/gas` before lint, tests, preview generation, and push.
+- `pnpm sync:gas` refreshes `dist/gas` from `src/gas`.
 - `pnpm adopt:gas` is the reverse sync used after `clasp pull`.
-- `pnpm build:ui` runs the UI install/build and then copies `ui/dist-sidebar/Sidebar.html` to the root `Sidebar.html` used by Apps Script.
+- `pnpm build:ui` runs the UI install/build and then copies `ui/dist-sidebar/Sidebar.html` to `dist/gas/Sidebar.html` for Apps Script deploys.
 - `pnpm preview:templates` regenerates the committed `template-previews.html` gallery.
 - `pnpm preview:templates:check` fails if the committed gallery is stale.
 - `pnpm pull` / `pnpm push` use `clasp`.

@@ -3,10 +3,11 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const { DEFAULT_CONFIG, buildSignatureData } = require('./Config.js');
-const { getTemplateRegistry } = require('./Schema.js');
+const { DEFAULT_CONFIG, buildSignatureData } = require('./src/gas/core/Config.js');
+const { getTemplateRegistry } = require('./src/gas/core/Schema.js');
 
 const rootDirectory = process.cwd();
+const templatesDirectory = path.join(rootDirectory, 'src', 'gas', 'templates');
 const outputPath = path.join(rootDirectory, 'template-previews.html');
 const checkMode = process.argv.includes('--check');
 
@@ -96,7 +97,7 @@ const previewScenarios = [
 ];
 
 function readFile(relativePath) {
-  return fs.readFileSync(path.join(rootDirectory, relativePath), 'utf8');
+  return fs.readFileSync(path.join(templatesDirectory, relativePath), 'utf8');
 }
 
 function escapeAttribute(value) {

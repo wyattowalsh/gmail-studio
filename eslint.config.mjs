@@ -4,6 +4,9 @@ import globals from 'globals';
 import importPlugin from 'eslint-plugin-import';
 
 export default [
+  {
+    ignores: ['dist/**'],
+  },
   js.configs.recommended,
   prettierPlugin,
   {

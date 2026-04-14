@@ -1,4 +1,4 @@
 .DS_Store
-.clasp.json
 node_modules/
 ui/node_modules/
+dist/
