@@ -18,7 +18,8 @@ Gmail Studio is a "Headless Spreadsheet" system. The Spreadsheet acts as the dat
 - **CI/CD:** GitHub Actions + Clasp
 
 ## 📁 Project Structure
-- `/`: Core Apps Script logic (`.js` files).
+- `src/gas/`: Canonical Apps Script source grouped by domain.
+- `/`: Flat Apps Script deploy files generated from `src/gas/` plus repo-level scripts/artifacts.
 - `ui/`: Modern React frontend source.
 - `__tests__/`: Jest suites for core logic.
 - `.github/workflows/`: Automation pipelines.
@@ -44,6 +45,7 @@ Gmail Studio is a "Headless Spreadsheet" system. The Spreadsheet acts as the dat
 
 ## 🚀 Workflows
 - **New Feature:** Research -> Update `AGENTS.md` if architecture changes -> Implement -> Test -> Push.
+- **Apps Script Change:** Edit `src/gas/` -> `pnpm sync:gas` -> Test/Push.
 - **UI Change:** Work in `ui/` -> Build -> Deploy.
 - **Bug Fix:** Reproduce in `__tests__/` -> Fix -> Verify.
 

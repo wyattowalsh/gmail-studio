@@ -5,14 +5,16 @@
   "main": "EmailSender.js",
   "scripts": {
     "build:ui": "pnpm --dir ui install --frozen-lockfile && pnpm --dir ui build && node -e \"require('fs').copyFileSync('ui/dist-sidebar/Sidebar.html','Sidebar.html')\"",
-    "test": "jest",
-    "test:ci": "pnpm exec jest --runInBand",
-    "lint": "eslint .",
+    "sync:gas": "node scripts/sync-gas.mjs",
+    "adopt:gas": "node scripts/adopt-gas-root.mjs",
+    "test": "pnpm sync:gas && jest",
+    "test:ci": "pnpm sync:gas && pnpm exec jest --runInBand",
+    "lint": "pnpm sync:gas && eslint .",
     "format": "prettier --write .",
-    "preview:templates": "node generate-template-previews.mjs",
-    "preview:templates:check": "node generate-template-previews.mjs --check",
-    "pull": "clasp pull",
-    "push": "clasp push"
+    "preview:templates": "pnpm sync:gas && node generate-template-previews.mjs",
+    "preview:templates:check": "pnpm sync:gas && node generate-template-previews.mjs --check",
+    "pull": "clasp pull && pnpm adopt:gas",
+    "push": "pnpm build:ui && pnpm sync:gas && clasp push"
   },
   "repository": {
     "type": "git",

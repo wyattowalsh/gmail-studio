@@ -2,6 +2,13 @@
 
 Gmail Studio is a Google Apps Script email tool built around a spreadsheet contract plus a React sidebar. The spreadsheet stores compose inputs, queue state, config, and optional analytics; Apps Script handles validation, drafting/sending, scheduling, and template rendering; the `ui/` app bundles into the root `Sidebar.html` used by Apps Script.
 
+The repository now uses a source/deploy split for Apps Script:
+
+- `src/gas/` is the canonical source tree, grouped by responsibility.
+- `/` keeps the flat Apps Script deploy surface that `clasp` pushes.
+- `pnpm sync:gas` regenerates the flat root files from `src/gas`.
+- `pnpm adopt:gas` copies a freshly pulled flat Apps Script root back into `src/gas`.
+
 See also: [`ui/README.md`](./ui/README.md)
 
 ## Current architecture
@@ -17,6 +24,16 @@ See also: [`ui/README.md`](./ui/README.md)
 - **React sidebar = operator UI**
   - three tabs: **Compose**, **Queue**, and **Analytics**.
   - uses `google.script.run` in Apps Script and mock responses in local preview mode.
+
+## Repository layout
+
+- `src/gas/app/` — Apps Script entrypoints and public handlers (`onOpen`, `doGet`, send/draft actions, previews, triggers)
+- `src/gas/workbook/` — workbook construction, presentation, and safeguard logic
+- `src/gas/core/` — shared schema, validation, config, data, template, and integration helpers
+- `src/gas/templates/` — HTML email and preview partials used by Apps Script
+- `/` — generated flat deploy files for Apps Script plus repo-level scripts and committed artifacts
+- `ui/` — React sidebar source
+- `__tests__/` — Jest suites for backend behavior
 
 ## Spreadsheet contract
 
@@ -187,6 +204,8 @@ Useful workbook actions:
 
 ```bash
 pnpm install
+pnpm sync:gas
+pnpm adopt:gas
 pnpm test
 pnpm test:ci
 pnpm lint
@@ -199,6 +218,9 @@ pnpm push
 
 Notes:
 
+- `src/gas/` is the source of truth for Apps Script code. The flat root `.js` / `.html` / `appsscript.json` files are generated deploy copies.
+- `pnpm sync:gas` refreshes the flat deploy root from `src/gas` before lint, tests, preview generation, and push.
+- `pnpm adopt:gas` is the reverse sync used after `clasp pull`.
 - `pnpm build:ui` runs the UI install/build and then copies `ui/dist-sidebar/Sidebar.html` to the root `Sidebar.html` used by Apps Script.
 - `pnpm preview:templates` regenerates the committed `template-previews.html` gallery.
 - `pnpm preview:templates:check` fails if the committed gallery is stale.
@@ -235,9 +257,9 @@ So deployment is automatic only for successful pushes to `main`, and it pushes t
 
 ## Key files
 
-- `Schema.js` — canonical sheet names, template registry, headers, delivery modes, statuses
-- `Setup.js` — creates and formats the spreadsheet contract
-- `WorkbookSemantics.js` — semantic anchors, warning-only protections, and optional `Outbound` queue views
+- `src/gas/core/Schema.js` — canonical sheet names, template registry, headers, delivery modes, statuses
+- `src/gas/workbook/Setup.js` — creates and formats the spreadsheet contract
+- `src/gas/workbook/WorkbookSemantics.js` — semantic anchors, warning-only protections, and optional `Outbound` queue views
 - `WorkbookStyle.js` — shared spreadsheet presentation helpers for setup, restyle, and `Start Here`
 - `SheetData.js` — reads/writes Compose, Config, and Outbound data
 - `Validation.js` — payload normalization, markdown conversion, A/B subject/headline selection
