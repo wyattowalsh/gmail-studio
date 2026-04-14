@@ -1,26 +1,33 @@
 const WORKBOOK_THEME = Object.freeze({
-  accent: '#6f897d',
-  accentSoft: '#dfe8e2',
-  analyticsPanel: '#e6edf2',
+  accent: '#7a6755',
+  accentSoft: '#ece0d2',
+  analyticsPanel: '#e5edf3',
   bodyFont: 'Arial',
+  composePanel: '#f4ece2',
+  composePanelAlt: '#ede3d6',
+  configPanel: '#f1e6d8',
+  configPanelAlt: '#e6ece7',
   editableBackground: '#fffdf8',
-  editableBorder: '#c9d4ce',
-  headerBackground: '#5c7265',
-  headerText: '#fffaf2',
-  ink: '#1f221c',
-  line: '#d7cec2',
-  muted: '#5e655d',
-  queuePanel: '#e8eee8',
-  riskPanel: '#f4e4db',
-  softGold: '#f1e8da',
+  editableBorder: '#c6b7a7',
+  headerBackground: '#67584a',
+  headerText: '#fff8ef',
+  heroPanel: '#f6efe5',
+  heroBorder: '#d7c6b3',
+  infoPanel: '#fbf8f2',
+  ink: '#24211d',
+  line: '#d9cbbb',
+  muted: '#686056',
+  queuePanel: '#e6efe7',
+  riskPanel: '#f4e1db',
+  softGold: '#efe0c7',
   surface: '#fcf8f1',
-  surfaceAlt: '#f6f0e6',
+  surfaceAlt: '#f4ece2',
   tabColors: Object.freeze({
-    analytics: '#7a93a6',
-    compose: '#a16e57',
-    config: '#8f8778',
-    outbound: '#6f897d',
-    start: '#6f897d',
+    analytics: '#7d95a7',
+    compose: '#ad785b',
+    config: '#918679',
+    outbound: '#6f8b73',
+    start: '#9b6a4e',
   }),
 });
 
@@ -85,10 +92,17 @@ function getWorkbookTheme() {
     accentSoft: WORKBOOK_THEME.accentSoft,
     analyticsPanel: WORKBOOK_THEME.analyticsPanel,
     bodyFont: WORKBOOK_THEME.bodyFont,
+    composePanel: WORKBOOK_THEME.composePanel,
+    composePanelAlt: WORKBOOK_THEME.composePanelAlt,
+    configPanel: WORKBOOK_THEME.configPanel,
+    configPanelAlt: WORKBOOK_THEME.configPanelAlt,
     editableBackground: WORKBOOK_THEME.editableBackground,
     editableBorder: WORKBOOK_THEME.editableBorder,
     headerBackground: WORKBOOK_THEME.headerBackground,
     headerText: WORKBOOK_THEME.headerText,
+    heroBorder: WORKBOOK_THEME.heroBorder,
+    heroPanel: WORKBOOK_THEME.heroPanel,
+    infoPanel: WORKBOOK_THEME.infoPanel,
     ink: WORKBOOK_THEME.ink,
     line: WORKBOOK_THEME.line,
     muted: WORKBOOK_THEME.muted,
@@ -186,40 +200,66 @@ function refreshStartHereSheet_(spreadsheet) {
 
   [
     [1, 28],
-    [2, 160],
-    [3, 160],
-    [4, 160],
-    [5, 160],
-    [6, 160],
-    [7, 160],
+    [2, 170],
+    [3, 170],
+    [4, 170],
+    [5, 170],
+    [6, 170],
+    [7, 170],
     [8, 28],
   ].forEach(([column, width]) => {
     sheet.setColumnWidth(column, width);
   });
 
   setRowHeightsIfPossible_(sheet, 1, 30, 18);
-  [2, 3, 5, 10, 14, 18, 25].forEach((row) => sheet.setRowHeight(row, 28));
+  [
+    [2, 36],
+    [3, 30],
+    [4, 30],
+    [5, 12],
+    [6, 30],
+    [7, 30],
+    [8, 30],
+    [9, 12],
+    [10, 26],
+    [11, 28],
+    [12, 28],
+    [13, 12],
+    [14, 26],
+    [15, 28],
+    [16, 28],
+    [17, 12],
+    [18, 24],
+    [19, 24],
+    [20, 24],
+    [21, 24],
+    [22, 24],
+    [23, 24],
+    [24, 24],
+    [25, 22],
+    [26, 22],
+  ].forEach(([row, height]) => sheet.setRowHeight(row, height));
 
   mergeRange_(sheet.getRange('B2:G2')).setValue('Gmail Studio');
   sheet
     .getRange('B2:G2')
-    .setBackground(theme.surface)
+    .setBackground(theme.heroPanel)
     .setFontFamily(theme.bodyFont)
-    .setFontSize(22)
+    .setFontSize(24)
     .setFontWeight('bold')
-    .setFontColor(theme.ink)
+    .setFontColor(theme.headerBackground)
     .setHorizontalAlignment('left')
     .setVerticalAlignment('middle')
-    .setBorder(true, true, false, true, false, false, theme.line);
+    .setBorder(true, true, true, true, false, false, theme.heroBorder);
 
   mergeRange_(sheet.getRange('B3:G4')).setValue(
-    'A calmer control plane for drafts, queue sends, and analytics. Configure defaults once, test in Compose, then run the queue when it is ready.'
+    'A warm command center for drafts, queue sends, and analytics. Configure once, test in Compose, then run the queue when it is ready.'
   );
   sheet
     .getRange('B3:G4')
-    .setBackground(theme.surface)
+    .setBackground(theme.infoPanel)
     .setFontFamily(theme.bodyFont)
-    .setFontSize(11)
+    .setFontSize(12)
     .setFontColor(theme.muted)
     .setWrap(true)
     .setVerticalAlignment('top')
@@ -229,19 +269,19 @@ function refreshStartHereSheet_(spreadsheet) {
     {
       range: 'B6:C8',
       eyebrow: '1 / Configure',
-      body: 'Set sender defaults, template, delivery mode, and signature settings in Config.',
+      body: 'Set sender defaults, signature style, delivery mode, and batch headroom in Config.',
       fill: theme.softGold,
     },
     {
       range: 'D6:E8',
       eyebrow: '2 / Draft + Test',
-      body: 'Use Compose for one-off previews, drafts, and safe test sends before going live.',
-      fill: theme.accentSoft,
+      body: 'Use Compose to preview a one-off message, then create a safe draft or test send.',
+      fill: theme.composePanel,
     },
     {
       range: 'F6:G8',
       eyebrow: '3 / Queue + Send',
-      body: 'Use Outbound for scheduled or batch sending with calmer defaults and status visibility.',
+      body: 'Review Outbound, check status, and send only when the queue is ready.',
       fill: theme.queuePanel,
     },
   ];
@@ -266,28 +306,28 @@ function refreshStartHereSheet_(spreadsheet) {
       label: 'Open Compose',
       titleRange: 'B10:D10',
       url: buildSheetUrl_(url, composeSheet),
-      copy: 'Draft a one-to-one message, preview the HTML, and send a safe test.',
+      copy: 'Draft a one-off message, preview the HTML, and create a safe draft.',
     },
     {
       descriptionRange: 'E11:G12',
       label: 'Open Outbound',
       titleRange: 'E10:G10',
       url: buildSheetUrl_(url, outboundSheet),
-      copy: 'Review the queue, schedule rows, and watch send status without the noise.',
+      copy: 'Scan the queue, confirm status, and send when the sheet is ready.',
     },
     {
       descriptionRange: 'B15:D16',
       label: 'Open Config',
       titleRange: 'B14:D14',
       url: buildSheetUrl_(url, configSheet),
-      copy: 'Adjust sender defaults, template choices, tracking, and batch headroom.',
+      copy: 'Tune sender identity, templates, tracking, and delivery defaults.',
     },
     {
       descriptionRange: 'E15:G16',
       label: 'Open Analytics',
       titleRange: 'E14:G14',
       url: buildSheetUrl_(url, analyticsSheet),
-      copy: 'Inspect raw opens and clicks while keeping reporting logic unchanged.',
+      copy: 'Review raw events without changing the reporting pipeline.',
     },
   ];
 
@@ -295,11 +335,11 @@ function refreshStartHereSheet_(spreadsheet) {
     mergeRange_(sheet.getRange(card.titleRange)).setFormula(buildHyperlinkFormula_(card.url, card.label));
     sheet
       .getRange(card.titleRange)
-      .setBackground(theme.surface)
+      .setBackground(theme.infoPanel)
       .setFontFamily(theme.bodyFont)
       .setFontSize(11)
       .setFontWeight('bold')
-      .setFontColor(theme.ink)
+      .setFontColor(theme.headerBackground)
       .setHorizontalAlignment('left')
       .setVerticalAlignment('middle')
       .setBorder(true, true, false, true, false, false, theme.line);
@@ -316,37 +356,42 @@ function refreshStartHereSheet_(spreadsheet) {
       .setBorder(false, true, true, true, false, false, theme.line);
   });
 
-  mergeRange_(sheet.getRange('B18:D18')).setValue('Live Status');
+  mergeRange_(sheet.getRange('B18:D18')).setValue('Live Queue');
   sheet
     .getRange('B18:D18')
     .setBackground(theme.accentSoft)
     .setFontFamily(theme.bodyFont)
-    .setFontColor(theme.ink)
+    .setFontColor(theme.headerBackground)
     .setFontWeight('bold')
     .setBorder(true, true, false, true, false, false, theme.line);
 
-  mergeRange_(sheet.getRange('E18:G18')).setValue('Current Defaults');
+  mergeRange_(sheet.getRange('E18:G18')).setValue('Active Defaults');
   sheet
     .getRange('E18:G18')
     .setBackground(theme.softGold)
     .setFontFamily(theme.bodyFont)
-    .setFontColor(theme.ink)
+    .setFontColor(theme.headerBackground)
     .setFontWeight('bold')
     .setBorder(true, true, false, true, false, false, theme.line);
 
   const statusRows = [
     ['Remaining quota', '=GET_REMAINING_QUOTA()'],
     [
-      'Queue ready',
+      'Queue headroom',
       '=IF(GET_REMAINING_QUOTA()>VALUE(IFERROR(VLOOKUP("batch_headroom",Config!A:B,2,FALSE),0)),"Ready to send","Watch headroom")',
     ],
     [
       'Queued rows',
       '=IFERROR(COUNTIF(INDEX(Outbound!A:AZ,0,MATCH("status",Outbound!2:2,0)),"PENDING")+COUNTIF(INDEX(Outbound!A:AZ,0,MATCH("status",Outbound!2:2,0)),"SCHEDULED"),0)',
     ],
+    ['Drafted rows', '=IFERROR(COUNTIF(INDEX(Outbound!A:AZ,0,MATCH("status",Outbound!2:2,0)),"DRAFTED"),0)'],
     ['Error rows', '=IFERROR(COUNTIF(INDEX(Outbound!A:AZ,0,MATCH("status",Outbound!2:2,0)),"ERROR"),0)'],
   ];
-  writeLabeledFormulaBlock_(sheet, 'B19', statusRows, theme.accentSoft);
+  writeLabeledFormulaBlock_(sheet, 'B19', statusRows, theme.accentSoft, {
+    labelFill: theme.accentSoft,
+    valueFill: theme.infoPanel,
+    valueWeight: 'bold',
+  });
 
   const defaultRows = [
     ['Sender', '=IFERROR(VLOOKUP("sender_name",Config!A:B,2,FALSE),"—")'],
@@ -354,11 +399,16 @@ function refreshStartHereSheet_(spreadsheet) {
     ['Delivery mode', '=IFERROR(VLOOKUP("default_delivery_mode",Config!A:B,2,FALSE),"—")'],
     ['Signature', '=IFERROR(VLOOKUP("signature_mode",Config!A:B,2,FALSE),"—")'],
     ['Tracking', '=IFERROR(VLOOKUP("tracking_enabled",Config!A:B,2,FALSE),"—")'],
+    ['Batch headroom', '=IFERROR(VLOOKUP("batch_headroom",Config!A:B,2,FALSE),"—")'],
   ];
-  writeLabeledFormulaBlock_(sheet, 'E19', defaultRows, theme.softGold);
+  writeLabeledFormulaBlock_(sheet, 'E19', defaultRows, theme.softGold, {
+    labelFill: theme.softGold,
+    valueFill: theme.editableBackground,
+    valueWeight: 'bold',
+  });
 
   mergeRange_(sheet.getRange('B25:G26')).setValue(
-    'Run actions from the Email Tools menu. This sheet is for orientation and status, not for buttons or sends.'
+    'Use the Email Tools menu for actions. This sheet is for orientation, not execution.'
   );
   sheet
     .getRange('B25:G26')
@@ -375,33 +425,40 @@ function refreshStartHereSheet_(spreadsheet) {
 }
 
 function applyComposeSheetTheme_(sheet) {
+  const theme = getWorkbookTheme();
   applySheetChrome_(sheet, 'compose');
   styleKeyValueSheet_(sheet, {
     sectionBlocks: [
-      { fill: '#f4ede4', keys: ['recipient', 'subject', 'headline', 'preview_text', 'first_name', 'body_text'] },
-      { fill: '#efe8df', keys: ['cta_text', 'cta_url'] },
       {
-        fill: '#e2ebe5',
+        fill: theme.composePanel,
+        keys: ['recipient', 'subject', 'headline', 'preview_text', 'first_name', 'body_text'],
+      },
+      { fill: theme.composePanelAlt, keys: ['cta_text', 'cta_url'] },
+      {
+        fill: theme.queuePanel,
         keys: ['template_name', 'include_signature', 'signature_mode', 'delivery_mode', 'from_alias', 'reply_to'],
       },
-      { fill: '#f6efe6', keys: ['footer_note', 'footer_company', 'footer_address', 'attachment_ids'] },
+      { fill: theme.infoPanel, keys: ['footer_note', 'footer_company', 'footer_address', 'attachment_ids'] },
     ],
     tallKeys: ['body_text'],
     requiredKeys: ['recipient', 'subject', 'headline'],
     valueColumn: 2,
+    valueFill: theme.editableBackground,
+    labelFill: theme.surfaceAlt,
     widths: [180, 560],
   });
 }
 
 function applyConfigSheetTheme_(sheet) {
+  const theme = getWorkbookTheme();
   applySheetChrome_(sheet, 'config');
   styleKeyValueSheet_(sheet, {
     descriptionColumn: 3,
     requiredKeys: [],
     sectionBlocks: [
-      { fill: '#f3ebe0', keys: ['sender_name', 'reply_to', 'default_template'] },
+      { fill: theme.configPanel, keys: ['sender_name', 'reply_to', 'default_template'] },
       {
-        fill: '#e3ebe6',
+        fill: theme.configPanelAlt,
         keys: [
           'signature_enabled',
           'signature_mode',
@@ -416,11 +473,14 @@ function applyConfigSheetTheme_(sheet) {
           'signature_note',
         ],
       },
-      { fill: '#f4e3da', keys: ['tracking_enabled', 'default_delivery_mode', 'from_alias'] },
-      { fill: '#ece6db', keys: ['batch_max_size', 'batch_headroom'] },
+      { fill: theme.accentSoft, keys: ['tracking_enabled', 'default_delivery_mode', 'from_alias'] },
+      { fill: theme.softGold, keys: ['batch_max_size', 'batch_headroom'] },
     ],
     tallKeys: [],
     valueColumn: 2,
+    descriptionFill: theme.infoPanel,
+    labelFill: theme.surfaceAlt,
+    valueFill: theme.editableBackground,
     widths: [190, 250, 430],
   });
 
@@ -429,7 +489,7 @@ function applyConfigSheetTheme_(sheet) {
     if (rowMap[key]) {
       sheet
         .getRange(rowMap[key], 2, 1, 1)
-        .setBackground('#fff2ec')
+        .setBackground(theme.softGold)
         .setFontWeight('bold')
         .setBorder(true, true, true, true, false, false, WORKBOOK_THEME.line);
     }
@@ -496,10 +556,10 @@ function applyOutboundSheetTheme_(sheet) {
 
   applySheetChrome_(sheet, 'outbound');
   sheet.setFrozenRows(2);
-  sheet.setFrozenColumns(5);
-  sheet.setRowHeight(1, 28);
-  sheet.setRowHeight(2, 34);
-  setRowHeightsIfPossible_(sheet, 3, Math.max(lastRow - 2, 1), 30);
+  sheet.setFrozenColumns(4);
+  sheet.setRowHeight(1, 30);
+  sheet.setRowHeight(2, 36);
+  setRowHeightsIfPossible_(sheet, 3, Math.max(lastRow - 2, 1), 31);
 
   if (typeof sheet.showColumns === 'function') {
     sheet.showColumns(1, lastColumn);
@@ -511,12 +571,13 @@ function applyOutboundSheetTheme_(sheet) {
 
   const titleRange = sheet.getRange(1, 1, 1, lastColumn);
   titleRange
-    .setBackground(theme.surfaceAlt)
+    .setBackground(theme.infoPanel)
     .setFontFamily(theme.bodyFont)
     .setFontColor(theme.muted)
     .setFontWeight('bold')
-    .setVerticalAlignment('middle');
-  sheet.getRange('A1').setFontColor(theme.ink).setFontSize(10);
+    .setVerticalAlignment('middle')
+    .setBorder(false, false, true, false, false, false, theme.line);
+  sheet.getRange('A1').setFontColor(theme.headerBackground).setFontSize(10).setFontWeight('bold');
 
   styleHeaderRange_(sheet.getRange(2, 1, 1, lastColumn));
 
@@ -548,11 +609,16 @@ function applyOutboundSheetTheme_(sheet) {
 
   if (statusColumn > 0) {
     const statusRange = sheet.getRange(3, statusColumn, Math.max(lastRow - 2, 1), 1);
-    statusRange.setHorizontalAlignment('center').setFontWeight('bold').setBackground('#f3eee7');
+    statusRange
+      .setHorizontalAlignment('center')
+      .setFontWeight('bold')
+      .setFontColor(theme.headerBackground)
+      .setBackground(theme.surfaceAlt);
     applyOutboundStatusRules_(sheet, statusColumn);
   }
 
   hideAndGroupAdvancedOutboundColumns_(sheet, headers);
+  emphasizeOutboundAdvancedBoundary_(sheet, headers, lastRow);
 }
 
 function applyAnalyticsSheetTheme_(sheet) {
@@ -579,7 +645,7 @@ function applyAnalyticsSheetTheme_(sheet) {
       .setFontColor(theme.ink)
       .setVerticalAlignment('top')
       .setBackgrounds(
-        buildAlternatingBackgrounds_(lastRow - 1, Math.max(sheet.getLastColumn(), 4), theme.surface, '#f1f5f8')
+        buildAlternatingBackgrounds_(lastRow - 1, Math.max(sheet.getLastColumn(), 4), theme.surface, theme.surfaceAlt)
       );
     sheet.getRange(2, 4, lastRow - 1, 1).setWrap(true);
   }
@@ -619,29 +685,36 @@ function buildSheetUrl_(spreadsheetUrl, sheet) {
   return `${spreadsheetUrl}#gid=${sheet.getSheetId()}`;
 }
 
-function writeLabeledFormulaBlock_(sheet, anchorA1, rows, fill) {
+function writeLabeledFormulaBlock_(sheet, anchorA1, rows, fill, options) {
   const start = parseCellReference_(anchorA1);
   const theme = getWorkbookTheme();
+  const config = options || {};
+  const labelFill = config.labelFill || fill;
+  const valueFill = config.valueFill || theme.editableBackground;
+  const labelColor = config.labelColor || theme.muted;
+  const valueColor = config.valueColor || theme.ink;
+  const valueWeight = config.valueWeight || 'normal';
 
   rows.forEach((row, index) => {
     const rowNumber = start.row + index;
     mergeRange_(sheet.getRange(rowNumber, start.column, 1, 2)).setValue(row[0]);
     sheet
       .getRange(rowNumber, start.column, 1, 2)
-      .setBackground(fill)
+      .setBackground(labelFill)
       .setFontFamily(theme.bodyFont)
       .setFontSize(10)
-      .setFontColor(theme.muted)
+      .setFontColor(labelColor)
       .setFontWeight('bold')
       .setBorder(index === 0, true, true, true, false, false, theme.line);
 
     mergeRange_(sheet.getRange(rowNumber, start.column + 2, 1, 1)).setFormula(row[1]);
     sheet
       .getRange(rowNumber, start.column + 2, 1, 1)
-      .setBackground('#fffdf8')
+      .setBackground(valueFill)
       .setFontFamily(theme.bodyFont)
       .setFontSize(10)
-      .setFontColor(theme.ink)
+      .setFontColor(valueColor)
+      .setFontWeight(valueWeight)
       .setHorizontalAlignment('left')
       .setBorder(index === 0, true, true, true, false, false, theme.line);
   });
@@ -724,6 +797,13 @@ function styleKeyValueSheet_(sheet, options) {
   const dataRows = Math.max(lastRow - 1, 1);
   const valueColumn = config.valueColumn || 2;
   const descriptionColumn = config.descriptionColumn || 0;
+  const labelFill = config.labelFill || theme.surfaceAlt;
+  const valueFill = config.valueFill || theme.editableBackground;
+  const descriptionFill = config.descriptionFill || theme.infoPanel;
+  const labelColor = config.labelColor || theme.muted;
+  const valueColor = config.valueColor || theme.ink;
+  const descriptionColor = config.descriptionColor || theme.muted;
+  const requiredFill = config.requiredFill || theme.heroPanel;
   const rowMap = getKeyRowMap_(sheet);
 
   sheet.setFrozenRows(1);
@@ -745,19 +825,21 @@ function styleKeyValueSheet_(sheet, options) {
       .setVerticalAlignment('middle')
       .setBackground(theme.surface);
 
-    sheet.getRange(2, 1, dataRows, 1).setFontWeight('bold').setFontColor(theme.ink).setBackground(theme.surfaceAlt);
+    sheet.getRange(2, 1, dataRows, 1).setFontWeight('bold').setFontColor(labelColor).setBackground(labelFill);
 
     sheet
       .getRange(2, valueColumn, dataRows, 1)
-      .setBackground(theme.editableBackground)
+      .setBackground(valueFill)
       .setBorder(true, true, true, true, false, false, theme.editableBorder)
+      .setFontColor(valueColor)
+      .setHorizontalAlignment('left')
       .setWrap(true);
 
     if (descriptionColumn > 0) {
       sheet
         .getRange(2, descriptionColumn, dataRows, 1)
-        .setBackground(theme.surface)
-        .setFontColor(theme.muted)
+        .setBackground(descriptionFill)
+        .setFontColor(descriptionColor)
         .setWrap(true);
     }
   }
@@ -775,12 +857,20 @@ function styleKeyValueSheet_(sheet, options) {
       .setBackground(block.fill)
       .setBorder(true, false, false, false, false, false, theme.line);
     sheet
+      .getRange(startRow, 1, endRow - startRow + 1, 1)
+      .setBackground(block.labelFill || block.fill || labelFill)
+      .setFontColor(block.labelColor || labelColor);
+    sheet
       .getRange(startRow, valueColumn, endRow - startRow + 1, 1)
-      .setBackground(theme.editableBackground)
-      .setBorder(true, true, true, true, false, false, theme.editableBorder);
+      .setBackground(block.valueFill || valueFill)
+      .setBorder(true, true, true, true, false, false, block.valueBorder || theme.editableBorder)
+      .setFontColor(block.valueColor || valueColor);
 
     if (descriptionColumn > 0) {
-      sheet.getRange(startRow, descriptionColumn, endRow - startRow + 1, 1).setFontColor(theme.muted);
+      sheet
+        .getRange(startRow, descriptionColumn, endRow - startRow + 1, 1)
+        .setBackground(block.descriptionFill || descriptionFill)
+        .setFontColor(block.descriptionColor || descriptionColor);
     }
   });
 
@@ -793,8 +883,9 @@ function styleKeyValueSheet_(sheet, options) {
     sheet.getRange(rowNumber, 1, 1, 1).setFontColor(theme.accent);
     sheet
       .getRange(rowNumber, valueColumn, 1, 1)
-      .setBackground('#fff6ed')
-      .setBorder(true, true, true, true, false, false, theme.accent);
+      .setBackground(requiredFill)
+      .setBorder(true, true, true, true, false, false, theme.accent)
+      .setFontColor(valueColor);
   });
 
   (config.tallKeys || []).forEach((key) => {
@@ -896,12 +987,12 @@ function applyOutboundStatusRules_(sheet, statusColumn) {
   const theme = getWorkbookTheme();
   const range = sheet.getRange(3, statusColumn, Math.max(sheet.getMaxRows ? sheet.getMaxRows() - 2 : 998, 1), 1);
   const rules = [
-    buildStatusRule_(sheet, range, 'SENT', '#dce9de', '#385b44'),
-    buildStatusRule_(sheet, range, 'DRAFTED', '#dfe7ed', '#476274'),
-    buildStatusRule_(sheet, range, 'SCHEDULED', '#f1e8da', '#8d6a2f'),
-    buildStatusRule_(sheet, range, 'PENDING', '#ece6db', '#6d6255'),
-    buildStatusRule_(sheet, range, 'ERROR', '#f4e0da', '#924d45'),
-    buildStatusRule_(sheet, range, 'DRY_RUN', '#ece8f3', '#615473'),
+    buildStatusRule_(sheet, range, 'SENT', theme.queuePanel, '#40624a'),
+    buildStatusRule_(sheet, range, 'DRAFTED', theme.analyticsPanel, '#4e6576'),
+    buildStatusRule_(sheet, range, 'SCHEDULED', theme.softGold, '#8b6e42'),
+    buildStatusRule_(sheet, range, 'PENDING', theme.surfaceAlt, '#6c6255'),
+    buildStatusRule_(sheet, range, 'ERROR', theme.riskPanel, '#9a4f48'),
+    buildStatusRule_(sheet, range, 'DRY_RUN', '#ebe7f1', '#615675'),
   ];
   if (typeof sheet.setConditionalFormatRules === 'function') {
     sheet.setConditionalFormatRules(rules);
@@ -926,7 +1017,8 @@ function styleHeaderRange_(range) {
     .setFontWeight('bold')
     .setFontSize(11)
     .setHorizontalAlignment('left')
-    .setVerticalAlignment('middle');
+    .setVerticalAlignment('middle')
+    .setBorder(true, false, true, false, false, false, theme.line);
 }
 
 function setRowHeightsIfPossible_(sheet, startRow, count, height) {
@@ -934,6 +1026,25 @@ function setRowHeightsIfPossible_(sheet, startRow, count, height) {
     return;
   }
   sheet.setRowHeights(startRow, count, height);
+}
+
+function emphasizeOutboundAdvancedBoundary_(sheet, headers, lastRow) {
+  const advancedHeaders = getAdvancedOutboundHeaders();
+  const firstAdvancedIndex = headers.findIndex((header) => advancedHeaders.indexOf(header) !== -1);
+  if (firstAdvancedIndex < 0) {
+    return;
+  }
+
+  const boundaryColumn = firstAdvancedIndex + 1;
+  const separatorColumn = Math.max(boundaryColumn - 1, 1);
+  const rowCount = Math.max(lastRow, OUTBOUND_HEADER_ROW);
+  try {
+    sheet
+      .getRange(1, separatorColumn, rowCount, 1)
+      .setBorder(false, true, false, false, false, false, getWorkbookTheme().line);
+  } catch (e) {
+    // Boundary styling is cosmetic only.
+  }
 }
 
 if (typeof module !== 'undefined') {
