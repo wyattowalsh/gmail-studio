@@ -1,0 +1,59 @@
+<table
+  role="presentation"
+  cellpadding="0"
+  cellspacing="0"
+  border="0"
+  style="border-collapse: collapse; width: 100%; max-width: 620px; font-family: Arial, Helvetica, sans-serif; color: #1f2937;"
+>
+  <tr>
+    <td style="width: 7px; background: linear-gradient(180deg, #4f6976 0%, #6a9fb5 22%, #88b9b5 58%, #c6ad88 100%); font-size: 7px; line-height: 7px;">&nbsp;</td>
+    <td style="width: 16px; font-size: 16px; line-height: 16px;">&nbsp;</td>
+    <td style="padding: 0; vertical-align: top;">
+      <div
+        style="font-family: 'SFMono-Regular', 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 24px; line-height: 1.05; font-weight: 700; letter-spacing: -0.045em; color: #111827;"
+      >
+        <?= signature_name || sender_name || '' ?>
+      </div>
+      <div style="margin: 8px 0 12px 0; font-size: 11px; line-height: 1; letter-spacing: 0.08em; color: #6b7280;">
+        ━━ ◈ ━━ ◇ ━━ ◈ ━━ ◇ ━━
+      </div>
+      <? if (signature_note) { ?>
+      <div style="margin: 0 0 12px 0; font-size: 12px; line-height: 1.55; color: #5f6b76;">
+        <?= signature_note ?>
+      </div>
+      <? } ?>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; width: 100%; max-width: 520px;">
+        <tr>
+          <td style="padding: 0 24px 0 0; vertical-align: top;">
+            <? if (signature_email) { ?>
+            <div style="margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;">
+              <span style="display: inline-block; width: 16px; color: #6a9fb5; font-weight: 700;">@</span>
+              <a href="mailto:<?= signature_email ?>" style="color: #1f2937; text-decoration: underline;"><?= signature_email ?></a>
+            </div>
+            <? } ?>
+            <? if (signature_linkedin_href && signature_linkedin_label) { ?>
+            <div style="margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;">
+              <span style="display: inline-block; width: 16px; color: #0a66c2; font-weight: 700;">in</span>
+              <a href="<?= signature_linkedin_href ?>" style="color: #1f2937; text-decoration: underline;"><?= signature_linkedin_label ?></a>
+            </div>
+            <? } ?>
+          </td>
+          <td style="padding: 0; vertical-align: top;">
+            <? if (signature_website_href && signature_website_label) { ?>
+            <div style="margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;">
+              <span style="display: inline-block; width: 16px; color: #4f6976; font-weight: 700;">⌗</span>
+              <a href="<?= signature_website_href ?>" style="color: #1f2937; text-decoration: underline; font-weight: 700;"><?= signature_website_label ?></a>
+            </div>
+            <? } ?>
+            <? if (signature_github_href && signature_github_label) { ?>
+            <div style="margin: 0 0 6px 0; font-size: 13px; line-height: 1.5;">
+              <span style="display: inline-block; width: 16px; color: #374151; font-weight: 700;">◼</span>
+              <a href="<?= signature_github_href ?>" style="color: #1f2937; text-decoration: underline;"><?= signature_github_label ?></a>
+            </div>
+            <? } ?>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

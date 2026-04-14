@@ -1,0 +1,42 @@
+{
+  "name": "gmail-studio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "EmailSender.js",
+  "scripts": {
+    "build:ui": "pnpm --dir ui install --frozen-lockfile && pnpm --dir ui build && node -e \"require('fs').copyFileSync('ui/dist-sidebar/Sidebar.html','Sidebar.html')\"",
+    "test": "jest",
+    "test:ci": "pnpm exec jest --runInBand",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "preview:templates": "node generate-template-previews.mjs",
+    "preview:templates:check": "node generate-template-previews.mjs --check",
+    "pull": "clasp pull",
+    "push": "clasp push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyattowalsh/gmail-studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/wyattowalsh/gmail-studio/issues"
+  },
+  "homepage": "https://github.com/wyattowalsh/gmail-studio#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@google/clasp": "^3.3.0",
+    "@types/google-apps-script": "^2.0.8",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-googleappsscript": "^1.0.5",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0",
+    "prettier": "^3.8.2"
+  }
+}
