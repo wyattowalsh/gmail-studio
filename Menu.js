@@ -1,30 +1,95 @@
 function onOpen() {
-  SpreadsheetApp.getUi()
-    .createMenu('Email Tools')
-    .addItem('Initialize / Reset Sheets (Destructive)', 'setupSheets')
-    .addItem('Restyle Workbook', 'restyleWorkbook')
-    .addItem('Refresh Start Here', 'refreshStartHereSheet')
-    .addSeparator()
-    .addItem('Open Dashboard', 'openSidebar')
-    .addSeparator()
-    .addItem('Preview compose draft', 'previewComposeDraft')
-    .addItem('Create compose draft in Gmail', 'createComposeDraft')
-    .addItem('Send test draft to myself', 'sendTestComposeDraft')
-    .addItem('Send compose draft', 'sendComposeDraft')
-    .addSeparator()
-    .addItem('Preview selected outbound row', 'previewSelectedOutboundRow')
-    .addItem('Create selected outbound draft', 'createSelectedOutboundDraft')
-    .addItem('Send selected outbound row', 'sendSelectedOutboundRow')
-    .addItem('Send unsent batch', 'sendUnsentBatch')
-    .addItem('Create scheduled drafts', 'createScheduledDraftBatch')
-    .addSeparator()
-    .addItem('Start scheduler (hourly)', 'startScheduler')
-    .addItem('Stop scheduler', 'stopScheduler')
-    .addToUi();
+  const ui = SpreadsheetApp.getUi();
+  const menu = ui.createMenu('Email Tools');
+
+  const sections = [
+    {
+      legacyItems: [
+        ['Initialize / Reset Sheets (Destructive)', 'setupSheets'],
+        ['Restyle Workbook', 'restyleWorkbook'],
+        ['Refresh Start Here', 'refreshStartHereSheet'],
+        ['Refresh Operator Safeguards', 'refreshOperatorSafeguards'],
+        ['Refresh Queue Views', 'refreshQueueViews'],
+      ],
+      items: [
+        ['Rebuild Workbook (Destructive)', 'setupSheets'],
+        ['Restyle Workbook', 'restyleWorkbook'],
+        ['Refresh Start Here', 'refreshStartHereSheet'],
+        ['Refresh Operator Safeguards', 'refreshOperatorSafeguards'],
+        ['Refresh Queue Views', 'refreshQueueViews'],
+      ],
+      label: 'Workbook',
+    },
+    {
+      legacyItems: [['Open Dashboard', 'openSidebar']],
+      items: [['Open Studio Sidebar', 'openSidebar']],
+      label: 'Sidebar',
+    },
+    {
+      legacyItems: [
+        ['Preview compose draft', 'previewComposeDraft'],
+        ['Create compose draft in Gmail', 'createComposeDraft'],
+        ['Send test draft to myself', 'sendTestComposeDraft'],
+        ['Send compose draft', 'sendComposeDraft'],
+      ],
+      items: [
+        ['Preview compose draft', 'previewComposeDraft'],
+        ['Create Gmail draft', 'createComposeDraft'],
+        ['Send test draft to myself', 'sendTestComposeDraft'],
+        ['Send compose draft', 'sendComposeDraft'],
+      ],
+      label: 'Compose',
+    },
+    {
+      legacyItems: [
+        ['Preview selected outbound row', 'previewSelectedOutboundRow'],
+        ['Create selected outbound draft', 'createSelectedOutboundDraft'],
+        ['Send selected outbound row', 'sendSelectedOutboundRow'],
+        ['Send unsent batch', 'sendUnsentBatch'],
+        ['Create scheduled drafts', 'createScheduledDraftBatch'],
+      ],
+      items: [
+        ['Preview selected outbound row', 'previewSelectedOutboundRow'],
+        ['Create selected outbound draft', 'createSelectedOutboundDraft'],
+        ['Send selected outbound row', 'sendSelectedOutboundRow'],
+        ['Send unsent batch', 'sendUnsentBatch'],
+        ['Create scheduled drafts', 'createScheduledDraftBatch'],
+      ],
+      label: 'Outbound',
+    },
+    {
+      legacyItems: [
+        ['Start scheduler (hourly)', 'startScheduler'],
+        ['Stop scheduler', 'stopScheduler'],
+      ],
+      items: [
+        ['Start scheduler (hourly)', 'startScheduler'],
+        ['Stop scheduler', 'stopScheduler'],
+      ],
+      label: 'Automation',
+    },
+  ];
+
+  if (typeof menu.addSubMenu === 'function') {
+    sections.forEach((section) => {
+      const subMenu = ui.createMenu(section.label);
+      section.items.forEach(([label, handler]) => subMenu.addItem(label, handler));
+      menu.addSubMenu(subMenu);
+    });
+  } else {
+    sections.forEach((section, index) => {
+      if (index > 0) {
+        menu.addSeparator();
+      }
+      section.legacyItems.forEach(([label, handler]) => menu.addItem(label, handler));
+    });
+  }
+
+  menu.addToUi();
 }
 
 function openSidebar() {
-  const html = HtmlService.createHtmlOutputFromFile('Sidebar').setTitle('Gmail Studio Dashboard');
+  const html = HtmlService.createHtmlOutputFromFile('Sidebar').setTitle('Gmail Studio Control');
   SpreadsheetApp.getUi().showSidebar(html);
 }
 
@@ -32,14 +97,14 @@ function startScheduler() {
   const triggers = ScriptApp.getProjectTriggers();
   for (let i = 0; i < triggers.length; i++) {
     if (triggers[i].getHandlerFunction() === 'sendScheduledBatch') {
-      SpreadsheetApp.getUi().alert('Scheduler is already running.');
+      SpreadsheetApp.getUi().alert('The hourly scheduler is already running.');
       return;
     }
   }
 
   ScriptApp.newTrigger('sendScheduledBatch').timeBased().everyHours(1).create();
 
-  SpreadsheetApp.getUi().alert('Scheduler started. It will check for scheduled emails every hour.');
+  SpreadsheetApp.getUi().alert('Hourly scheduler started. Gmail Studio will check for scheduled sends every hour.');
 }
 
 function stopScheduler() {
@@ -53,9 +118,9 @@ function stopScheduler() {
   }
 
   if (stopped) {
-    SpreadsheetApp.getUi().alert('Scheduler stopped.');
+    SpreadsheetApp.getUi().alert('Hourly scheduler stopped.');
   } else {
-    SpreadsheetApp.getUi().alert('Scheduler was not running.');
+    SpreadsheetApp.getUi().alert('The hourly scheduler was not running.');
   }
 }
 

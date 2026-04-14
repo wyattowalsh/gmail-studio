@@ -2,6 +2,7 @@
  * Initializes the workbook structure and then applies the shared presentation layer.
  */
 function setupSheets() {
+  const workbookSemantics = typeof require === 'function' ? require('./WorkbookSemantics') : globalThis || {};
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const ui = SpreadsheetApp.getUi();
   const configDefaults = getConfigDefaults();
@@ -22,20 +23,31 @@ function setupSheets() {
   }
 
   applyWorkbookPresentation_(ss, { rebuildStartHere: true });
-  ui.alert('Gmail Studio // workbook reset and redesigned.');
+  if (typeof workbookSemantics.refreshOperatorSafeguards === 'function') {
+    workbookSemantics.refreshOperatorSafeguards(ss);
+  }
+  ui.alert('Workbook rebuilt with warm premium defaults.');
 }
 
 function restyleWorkbook() {
+  const workbookSemantics = typeof require === 'function' ? require('./WorkbookSemantics') : globalThis || {};
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   applyWorkbookPresentation_(ss, { rebuildStartHere: true });
+  if (typeof workbookSemantics.refreshOperatorSafeguards === 'function') {
+    workbookSemantics.refreshOperatorSafeguards(ss);
+  }
   SpreadsheetApp.getUi().alert('Workbook restyled. Data and queue state were preserved.');
 }
 
 function refreshStartHereSheet() {
+  const workbookSemantics = typeof require === 'function' ? require('./WorkbookSemantics') : globalThis || {};
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   refreshStartHereSheet_(ss);
   applyWorkbookPresentation_(ss, { rebuildStartHere: false });
-  SpreadsheetApp.getUi().alert('Start Here refreshed.');
+  if (typeof workbookSemantics.refreshOperatorSafeguards === 'function') {
+    workbookSemantics.refreshOperatorSafeguards(ss);
+  }
+  SpreadsheetApp.getUi().alert('Start Here refreshed with the latest workbook guidance.');
 }
 
 function resetConfigSheet_(spreadsheet, configDefaults) {
@@ -43,37 +55,29 @@ function resetConfigSheet_(spreadsheet, configDefaults) {
   const configSheet = ss.getSheetByName(SHEET_NAMES.config) || ss.insertSheet(SHEET_NAMES.config);
   const configData = [
     ['Setting', 'Value', 'Description'],
-    ['sender_name', configDefaults.sender_name, 'The name that appears in the From field'],
-    ['reply_to', configDefaults.reply_to, 'The email address for replies'],
-    ['default_template', configDefaults.default_template, 'Default template name'],
-    ['signature_enabled', configDefaults.signature_enabled, 'Include signature by default'],
-    ['signature_mode', configDefaults.signature_mode, 'Default signature style: compact or full'],
-    ['signature_name', configDefaults.signature_name, 'Display name used in the email signature'],
-    ['signature_email', configDefaults.signature_email, 'Primary contact email shown in the signature'],
-    ['signature_website_label', configDefaults.signature_website_label, 'Label for the website link in the signature'],
-    ['signature_website_href', configDefaults.signature_website_href, 'Website link used in the signature'],
-    [
-      'signature_linkedin_label',
-      configDefaults.signature_linkedin_label,
-      'Label for the LinkedIn link in the signature',
-    ],
-    ['signature_linkedin_href', configDefaults.signature_linkedin_href, 'LinkedIn link used in the signature'],
-    ['signature_github_label', configDefaults.signature_github_label, 'Label for the GitHub link in the signature'],
-    ['signature_github_href', configDefaults.signature_github_href, 'GitHub link used in the signature'],
-    ['signature_note', configDefaults.signature_note, 'Optional note shown in the full signature mode'],
-    ['tracking_enabled', configDefaults.tracking_enabled, 'Enable open and click tracking in sent emails'],
+    ['sender_name', configDefaults.sender_name, 'Name shown in the From field.'],
+    ['reply_to', configDefaults.reply_to, 'Address used when someone replies.'],
+    ['default_template', configDefaults.default_template, 'Template used by default in Compose.'],
+    ['signature_enabled', configDefaults.signature_enabled, 'Include a signature by default.'],
+    ['signature_mode', configDefaults.signature_mode, 'Default signature style: compact or full.'],
+    ['signature_name', configDefaults.signature_name, 'Display name used in the signature.'],
+    ['signature_email', configDefaults.signature_email, 'Primary contact email shown in the signature.'],
+    ['signature_website_label', configDefaults.signature_website_label, 'Label for the website link.'],
+    ['signature_website_href', configDefaults.signature_website_href, 'Website link used in the signature.'],
+    ['signature_linkedin_label', configDefaults.signature_linkedin_label, 'Label for the LinkedIn link.'],
+    ['signature_linkedin_href', configDefaults.signature_linkedin_href, 'LinkedIn link used in the signature.'],
+    ['signature_github_label', configDefaults.signature_github_label, 'Label for the GitHub link.'],
+    ['signature_github_href', configDefaults.signature_github_href, 'GitHub link used in the signature.'],
+    ['signature_note', configDefaults.signature_note, 'Optional note shown in the full signature mode.'],
+    ['tracking_enabled', configDefaults.tracking_enabled, 'Enable open and click tracking.'],
     [
       'default_delivery_mode',
       configDefaults.default_delivery_mode,
-      'Whether compose actions send or create drafts by default',
+      'Choose whether Compose sends or drafts by default.',
     ],
-    [
-      'from_alias',
-      configDefaults.from_alias,
-      'Optional Gmail alias to use when creating drafts or sending as an alias',
-    ],
-    ['batch_max_size', configDefaults.batch_max_size, 'Maximum rows to process in a single batch execution'],
-    ['batch_headroom', configDefaults.batch_headroom, 'Recipients of daily quota to reserve for manual sends'],
+    ['from_alias', configDefaults.from_alias, 'Optional Gmail alias for drafts and sends.'],
+    ['batch_max_size', configDefaults.batch_max_size, 'Maximum rows to process in one batch.'],
+    ['batch_headroom', configDefaults.batch_headroom, 'Daily quota to keep in reserve for manual sends.'],
   ];
 
   configSheet.clear();
@@ -86,16 +90,16 @@ function resetComposeSheet_(spreadsheet, configDefaults, templateNames, delivery
   const composeSheet = ss.getSheetByName(SHEET_NAMES.compose) || ss.insertSheet(SHEET_NAMES.compose);
   const composeData = [
     ['field', 'value'],
-    ['recipient', 'homie@example.com'],
-    ['subject', 'quick note from me'],
-    ['headline', 'made this for the homies'],
-    ['preview_text', 'quick note from me'],
+    ['recipient', 'alex@example.com'],
+    ['subject', 'Quick note from Gmail Studio'],
+    ['headline', 'A cleaner way to send from Sheets'],
+    ['preview_text', 'A polished one-to-one message workflow.'],
     ['first_name', 'Alex'],
     [
       'body_text',
-      'yo,\n\ni finally put together a cleaner way to send nice-looking emails straight from sheets.\n\nthis one is just a test, but the vibe is:\n- personal\n- simple\n- actually readable\n- not some ugly default gmail block\n\nif this lands cleanly, mission accomplished.\n\n- me',
+      'Hi Alex,\n\nI put together a cleaner way to send polished emails directly from Sheets.\n\nThis row is just a test, but the workflow is designed to stay calm, readable, and easy to operate.\n\nIf everything looks right, we can send from here with confidence.\n\nBest,\nSam',
     ],
-    ['cta_text', 'Open it'],
+    ['cta_text', 'Review message'],
     ['cta_url', 'https://example.com'],
     ['template_name', configDefaults.default_template],
     ['include_signature', configDefaults.signature_enabled],
@@ -103,9 +107,9 @@ function resetComposeSheet_(spreadsheet, configDefaults, templateNames, delivery
     ['delivery_mode', configDefaults.default_delivery_mode],
     ['from_alias', configDefaults.from_alias],
     ['reply_to', configDefaults.reply_to],
-    ['footer_note', 'sent with care, not automation sludge.'],
-    ['footer_company', 'Homies Inc.'],
-    ['footer_address', 'Los Angeles, CA'],
+    ['footer_note', 'Sent with care from Gmail Studio.'],
+    ['footer_company', 'Gmail Studio'],
+    ['footer_address', 'New York, NY'],
     ['attachment_ids', ''],
   ];
 
@@ -151,7 +155,7 @@ function resetOutboundSheet_(
   outboundSheet
     .getRange('A1')
     .setFormula(
-      '= "QUEUE STATUS / " & IF(GET_REMAINING_QUOTA() > VALUE(IFERROR(VLOOKUP("batch_headroom",Config!A:B,2,FALSE),0)), "READY", "LOW HEADROOM") & " / REMAINING " & GET_REMAINING_QUOTA()'
+      '= "Queue status / " & IF(GET_REMAINING_QUOTA() > VALUE(IFERROR(VLOOKUP("batch_headroom",Config!A:B,2,FALSE),0)), "Ready", "Low headroom") & " / Remaining " & GET_REMAINING_QUOTA()'
     );
   outboundSheet.getRange(2, 1, 1, outboundHeaders.length).setValues([outboundHeaders]);
 
@@ -182,6 +186,10 @@ function buildListValidation_(values) {
 if (typeof module !== 'undefined') {
   module.exports = {
     buildListValidation_,
+    refreshOperatorSafeguards: (typeof require === 'function' ? require('./WorkbookSemantics') : globalThis || {})
+      .refreshOperatorSafeguards,
+    refreshQueueViews: (typeof require === 'function' ? require('./WorkbookSemantics') : globalThis || {})
+      .refreshQueueViews,
     refreshStartHereSheet,
     resetAnalyticsSheet_,
     resetComposeSheet_,
