@@ -1,0 +1,20 @@
+# Ignore everything in ui/ except for what we build
+ui/**
+node_modules/**
+__tests__/**
+.git/**
+.github/**
+package.json
+pnpm-lock.yaml
+eslint.config.mjs
+jest.config.cjs
+.prettierrc
+.prettierignore
+README.md
+AGENTS.md
+plans/**
+
+# Keep core script files
+!*.js
+!appsscript.json
+!*.html

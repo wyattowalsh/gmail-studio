@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 16px;
+        background: #f5f7fa;
+        color: #1f2937;
+      }
+      .meta {
+        margin-bottom: 16px;
+        padding: 12px;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+      }
+      .panel {
+        margin-bottom: 16px;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+      }
+      .panel h3 {
+        margin: 0;
+        padding: 12px 14px;
+        font-size: 14px;
+        border-bottom: 1px solid #e5e7eb;
+        background: #f9fafb;
+      }
+      .panel .content {
+        padding: 14px;
+      }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+        margin: 0;
+      }
+      iframe {
+        width: 100%;
+        min-height: 420px;
+        border: 0;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="meta">
+      <div><strong>To:</strong> <?= preview.recipient ?></div>
+      <div><strong>Subject:</strong> <?= preview.subject ?></div>
+    </div>
+
+    <div class="panel">
+      <h3>HTML Preview</h3>
+      <div class="content">
+        <iframe srcdoc="<?= preview.htmlBody.replace(/"/g, '&quot;') ?>"></iframe>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Plain-text fallback</h3>
+      <div class="content">
+        <pre><?= preview.textBody ?></pre>
+      </div>
+    </div>
+  </body>
+</html>
