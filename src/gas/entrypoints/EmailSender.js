@@ -4,18 +4,21 @@ function getEmailSenderController_() {
   }
 
   return {
-    createComposeDraft: typeof createComposeDraft_ === 'function' ? createComposeDraft_ : null,
-    createScheduledDraftBatch: typeof createScheduledDraftBatch_ === 'function' ? createScheduledDraftBatch_ : null,
+    createComposeDraft: typeof globalThis.createComposeDraft_ === 'function' ? globalThis.createComposeDraft_ : null,
+    createScheduledDraftBatch:
+      typeof globalThis.createScheduledDraftBatch_ === 'function' ? globalThis.createScheduledDraftBatch_ : null,
     createSelectedOutboundDraft:
-      typeof createSelectedOutboundDraft_ === 'function' ? createSelectedOutboundDraft_ : null,
-    createSingleDraft: typeof createSingleDraft_ === 'function' ? createSingleDraft_ : null,
-    getQuotaForecast: typeof getQuotaForecast_ === 'function' ? getQuotaForecast_ : null,
-    sendComposeDraft: typeof sendComposeDraft_ === 'function' ? sendComposeDraft_ : null,
-    sendScheduledBatch: typeof sendScheduledBatch_ === 'function' ? sendScheduledBatch_ : null,
-    sendSelectedOutboundRow: typeof sendSelectedOutboundRow_ === 'function' ? sendSelectedOutboundRow_ : null,
-    sendSingleEmail: typeof sendSingleEmail_ === 'function' ? sendSingleEmail_ : null,
-    sendTestComposeDraft: typeof sendTestComposeDraft_ === 'function' ? sendTestComposeDraft_ : null,
-    sendUnsentBatch: typeof sendUnsentBatch_ === 'function' ? sendUnsentBatch_ : null,
+      typeof globalThis.createSelectedOutboundDraft_ === 'function' ? globalThis.createSelectedOutboundDraft_ : null,
+    createSingleDraft: typeof globalThis.createSingleDraft_ === 'function' ? globalThis.createSingleDraft_ : null,
+    getQuotaForecast: typeof globalThis.getQuotaForecast_ === 'function' ? globalThis.getQuotaForecast_ : null,
+    sendComposeDraft: typeof globalThis.sendComposeDraft_ === 'function' ? globalThis.sendComposeDraft_ : null,
+    sendScheduledBatch: typeof globalThis.sendScheduledBatch_ === 'function' ? globalThis.sendScheduledBatch_ : null,
+    sendSelectedOutboundRow:
+      typeof globalThis.sendSelectedOutboundRow_ === 'function' ? globalThis.sendSelectedOutboundRow_ : null,
+    sendSingleEmail: typeof globalThis.sendSingleEmail_ === 'function' ? globalThis.sendSingleEmail_ : null,
+    sendTestComposeDraft:
+      typeof globalThis.sendTestComposeDraft_ === 'function' ? globalThis.sendTestComposeDraft_ : null,
+    sendUnsentBatch: typeof globalThis.sendUnsentBatch_ === 'function' ? globalThis.sendUnsentBatch_ : null,
   };
 }
 

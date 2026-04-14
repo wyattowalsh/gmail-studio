@@ -4,11 +4,12 @@ function getPreviewController_() {
   }
 
   return {
-    getPreviewHtml: typeof getPreviewHtml_ === 'function' ? getPreviewHtml_ : null,
-    getTemplateCatalogForUi: typeof getTemplateCatalogForUi_ === 'function' ? getTemplateCatalogForUi_ : null,
-    previewComposeDraft: typeof previewComposeDraft_ === 'function' ? previewComposeDraft_ : null,
+    getPreviewHtml: typeof globalThis.getPreviewHtml_ === 'function' ? globalThis.getPreviewHtml_ : null,
+    getTemplateCatalogForUi:
+      typeof globalThis.getTemplateCatalogForUi_ === 'function' ? globalThis.getTemplateCatalogForUi_ : null,
+    previewComposeDraft: typeof globalThis.previewComposeDraft_ === 'function' ? globalThis.previewComposeDraft_ : null,
     previewSelectedOutboundRow:
-      typeof previewSelectedOutboundRow_ === 'function' ? previewSelectedOutboundRow_ : null,
+      typeof globalThis.previewSelectedOutboundRow_ === 'function' ? globalThis.previewSelectedOutboundRow_ : null,
   };
 }
 

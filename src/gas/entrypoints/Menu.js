@@ -4,10 +4,10 @@ function getMenuController_() {
   }
 
   return {
-    onOpen: typeof onOpen_ === 'function' ? onOpen_ : null,
-    openSidebar: typeof openSidebar_ === 'function' ? openSidebar_ : null,
-    startScheduler: typeof startScheduler_ === 'function' ? startScheduler_ : null,
-    stopScheduler: typeof stopScheduler_ === 'function' ? stopScheduler_ : null,
+    onOpen: typeof globalThis.onOpen_ === 'function' ? globalThis.onOpen_ : null,
+    openSidebar: typeof globalThis.openSidebar_ === 'function' ? globalThis.openSidebar_ : null,
+    startScheduler: typeof globalThis.startScheduler_ === 'function' ? globalThis.startScheduler_ : null,
+    stopScheduler: typeof globalThis.stopScheduler_ === 'function' ? globalThis.stopScheduler_ : null,
   };
 }
 

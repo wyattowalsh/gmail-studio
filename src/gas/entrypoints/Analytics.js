@@ -4,11 +4,11 @@ function getAnalyticsController_() {
   }
 
   return {
-    doGet: typeof doGet_ === 'function' ? doGet_ : null,
-    getAnalyticsSummary: typeof getAnalyticsSummary_ === 'function' ? getAnalyticsSummary_ : null,
-    getAnalyticsTrends: typeof getAnalyticsTrends_ === 'function' ? getAnalyticsTrends_ : null,
-    getWebAppUrl: typeof getWebAppUrl_ === 'function' ? getWebAppUrl_ : null,
-    logAnalyticsEvent: typeof logAnalyticsEvent_ === 'function' ? logAnalyticsEvent_ : null,
+    doGet: typeof globalThis.doGet_ === 'function' ? globalThis.doGet_ : null,
+    getAnalyticsSummary: typeof globalThis.getAnalyticsSummary_ === 'function' ? globalThis.getAnalyticsSummary_ : null,
+    getAnalyticsTrends: typeof globalThis.getAnalyticsTrends_ === 'function' ? globalThis.getAnalyticsTrends_ : null,
+    getWebAppUrl: typeof globalThis.getWebAppUrl_ === 'function' ? globalThis.getWebAppUrl_ : null,
+    logAnalyticsEvent: typeof globalThis.logAnalyticsEvent_ === 'function' ? globalThis.logAnalyticsEvent_ : null,
   };
 }
 

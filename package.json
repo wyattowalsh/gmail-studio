@@ -2,6 +2,7 @@
   "name": "gmail-studio",
   "version": "1.0.0",
   "description": "",
+  "packageManager": "pnpm@10.13.1",
   "main": "src/gas/entrypoints/EmailSender.js",
   "scripts": {
     "build:ui": "pnpm --dir ui install --frozen-lockfile && pnpm --dir ui build && node -e \"const fs=require('fs'); fs.mkdirSync('dist/gas',{recursive:true}); fs.copyFileSync('ui/dist-sidebar/Sidebar.html','dist/gas/Sidebar.html')\"",

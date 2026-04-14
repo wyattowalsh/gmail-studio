@@ -4,7 +4,7 @@ function getAutomationController_() {
   }
 
   return {
-    onEdit: typeof onEdit_ === 'function' ? onEdit_ : null,
+    onEdit: typeof globalThis.onEdit_ === 'function' ? globalThis.onEdit_ : null,
   };
 }
 
